@@ -415,26 +415,21 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   </script>
 <script>
- document.addEventListener('DOMContentLoaded', function() {
-    const navLinks = document.querySelectorAll('.nav-link');
-    const currentPage = window.location.pathname === '/' 
-      ? 'index.html' 
-      : window.location.pathname.split('/').pop();
-
-    console.log('Current Page:', currentPage); // Debug: check the value in production
-
-    navLinks.forEach(link => {
-        const linkPage = link.getAttribute('href');
-        console.log('Link Page:', linkPage); // Debug: check each link's href
-
-        // Add active styles if URLs match
-        if (linkPage === currentPage) {
-            link.classList.add('text-blue-600', 'border-blue-600');
-            link.classList.remove('text-gray-600', 'border-transparent');
-        }
-    });
-});
- 
-</script>
+  // Highlight active navigation link
+  document.addEventListener('DOMContentLoaded', function() {
+      const navLinks = document.querySelectorAll('.nav-link');
+      const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  
+      navLinks.forEach(link => {
+          const linkPage = link.getAttribute('href');
+          
+          // Add active styles if URLs match
+          if (linkPage === currentPage) {
+              link.classList.add('text-blue-600', 'border-blue-600');
+              link.classList.remove('text-gray-600', 'border-transparent');
+          }
+      });
+  });
+  </script>
 </body>
 </html>
