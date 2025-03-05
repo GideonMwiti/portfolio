@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GIDEON-MWITI</title>
+  <!-- Tailwind CSS CDN for styling -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome CDN for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-100">
+  
+  <!-- ========== Navigation Section ========== -->
+  <nav class="fixed w-full bg-white shadow-lg z-50">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <!-- Brand Logo -->
+      <div class="flex items-center">
+        <span class="text-xl font-bold text-blue-600">GIDEON-MWITI</span>
+      </div>
+     <!--  Desktop Navigation  -->
+<div class="hidden md:flex space-x-8">
+  <a href="index.html" class="nav-link text-gray-600 font-bold hover:text-blue-600 flex items-center relative border-b-2 border-transparent transition-colors duration-200">
+    <i class="fas fa-home mr-2"></i> Home
+  </a>
+  <a href="about.html" class="nav-link text-gray-600 font-bold hover:text-blue-600 flex items-center relative border-b-2 border-transparent transition-colors duration-200">
+    <i class="fas fa-user mr-2"></i> About
+  </a>
+  <a href="services.html" class="nav-link text-gray-600 font-bold hover:text-blue-600 flex items-center relative border-b-2 border-transparent transition-colors duration-200">
+    <i class="fas fa-cogs mr-2"></i> Services
+  </a>
+  <a href="portfolio.html" class="nav-link text-gray-600 font-bold hover:text-blue-600 flex items-center relative border-b-2 border-transparent transition-colors duration-200">
+    <i class="fas fa-briefcase mr-2"></i> Portfolio
+  </a>
+  <a href="contact.html" class="nav-link text-gray-600 font-bold hover:text-blue-600 flex items-center relative border-b-2 border-transparent transition-colors duration-200">
+    <i class="fas fa-envelope mr-2"></i> Contact
+  </a>
+</div>
+      <!-- Mobile Menu Toggle Button -->
+      <div class="md:hidden">
+        <button id="menuBtn" class="text-gray-600">
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Mobile Navigation Menu (hidden by default) -->
+    <div id="mobileMenu" class="mobile-menu md:hidden bg-white hidden">
+      <div class="px-4 py-2 space-y-4">
+        <!-- Mobile Navigation Links -->
+        <a href="index.html" class="block text-gray-600 font-bold hover:text-blue-600 flex items-center">
+          <i class="fas fa-home mr-2"></i> Home
+        </a>
+        <a href="about.html" class="block text-gray-600 font-bold hover:text-blue-600 flex items-center">
+          <i class="fas fa-user mr-2"></i> About
+        </a>
+        <a href="services.html" class="block text-gray-600 font-bold hover:text-blue-600 flex items-center">
+          <i class="fas fa-cogs mr-2"></i> Services
+        </a>
+        <a href="portfolio.html" class="block text-gray-600 font-bold hover:text-blue-600 flex items-center">
+          <i class="fas fa-briefcase mr-2"></i> Portfolio
+        </a>
+        <a href="contact.html" class="block text-gray-600 font-bold hover:text-blue-600 flex items-center">
+          <i class="fas fa-envelope mr-2"></i> Contact
+        </a>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- ========== Services Section ========== -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">What I do</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Service Card: IT Project Management -->
+        <div class="bg-white p-6 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:shadow-lg">
+          <h3 class="text-xl font-bold mb-4">IT Project Management</h3>
+          <p class="text-gray-600">End-to-end IT project Management using Agile and traditional methodologies to ensure efficiency and timely delivery.</p>
+          <a href="contact.html?subject=IT%20Project%20Management" class="block mt-4 font-bold text-blue-600 hover:underline">REQUEST QUOTATION</a>
+        </div>
+        
+        <!-- Service Card: Product Development -->
+        <div class="bg-white p-6 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:shadow-lg">
+          <h3 class="text-xl font-bold mb-4">Product Development</h3>
+          <p class="text-gray-600">Transforming ideas into scalable and market-ready digital products through strategic planning and execution.</p>
+          <a href="contact.html?subject=Product%20Development" class="block mt-4 font-bold text-blue-600 hover:underline">REQUEST QUOTATION</a>
+        </div>
+        
+        <!-- Service Card: Technical Project Coordination -->
+        <div class="bg-white p-6 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:shadow-lg">
+          <h3 class="text-xl font-bold mb-4">Technical Project Coordination</h3>
+          <p class="text-gray-600">Overseeing technical teams, ensuring seamless collaboration, and driving projects to successful completion.</p>
+          <a href="contact.html?subject=Technical%20Project%20Coordination" class="block mt-4 font-bold text-blue-600 hover:underline">REQUEST QUOTATION</a>
+        </div>
+        
+        <!-- Service Card: AI Chatbot Development -->
+        <div class="bg-white p-6 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:shadow-lg">
+          <h3 class="text-xl font-bold mb-4">AI Chatbot Development</h3>
+          <p class="text-gray-600">Creating intelligent chatbots for customer engagement, automation, and personalized user experiences.</p>
+          <a href="contact.html?subject=AI%20Chatbot%20Development" class="block mt-4 font-bold text-blue-600 hover:underline">REQUEST QUOTATION</a>
+        </div>
+        
+        <!-- Service Card: Machine Learning Model Development -->
+        <div class="bg-white p-6 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:shadow-lg">
+          <h3 class="text-xl font-bold mb-4">Machine Learning Model Development</h3>
+          <p class="text-gray-600">Building and deploying machine learning models to enable predictive analytics, automation, and AI-driven insights.</p>
+          <a href="contact.html?subject=Machine%20Learning%20Model%20Development" class="block mt-4 font-bold text-blue-600 hover:underline">REQUEST QUOTATION</a>
+        </div>
+        
+        <!-- Service Card: Predictive Analytics & Data Science -->
+        <div class="bg-white p-6 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:shadow-lg">
+          <h3 class="text-xl font-bold mb-4">Predictive Analytics & Data Science</h3>
+          <p class="text-gray-600">Leveraging data science and AI to predict trends, optimize decision-making, and enhance business strategies.</p>
+          <a href="contact.html?subject=Predictive%20Analytics%20%26%20Data%20Science" class="block mt-4 font-bold text-blue-600 hover:underline">REQUEST QUOTATION</a>
+        </div>
+        
+        <!-- Service Card: Web Development -->
+        <div class="bg-white p-6 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:shadow-lg">
+          <h3 class="text-xl font-bold mb-4">Web Development</h3>
+          <p class="text-gray-600">Designing and developing responsive, high-performance websites with modern frameworks and technologies.</p>
+          <a href="contact.html?subject=Web%20Development" class="block mt-4 font-bold text-blue-600 hover:underline">REQUEST QUOTATION</a>
+        </div>
+        
+        <!-- Service Card: Mobile App Development -->
+        <div class="bg-white p-6 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:shadow-lg">
+          <h3 class="text-xl font-bold mb-4">Mobile App Development</h3>
+          <p class="text-gray-600">Developing scalable and user-friendly Android and iOS applications tailored to business needs.</p>
+          <a href="contact.html?subject=Mobile%20App%20Development" class="block mt-4 font-bold text-blue-600 hover:underline">REQUEST QUOTATION</a>
+        </div>
+        
+        <!-- Service Card: USSD Development -->
+        <div class="bg-white p-6 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:shadow-lg">
+          <h3 class="text-xl font-bold mb-4">USSD Development</h3>
+          <p class="text-gray-600">Creating interactive USSD applications for businesses, ensuring accessibility for feature phone users.</p>
+          <a href="contact.html?subject=USSD%20Development" class="block mt-4 font-bold text-blue-600 hover:underline">REQUEST QUOTATION</a>
+        </div>
+        
+        <!-- Service Card: API Development & Optimization -->
+        <div class="bg-white p-6 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:shadow-lg">
+          <h3 class="text-xl font-bold mb-4">API Development & Optimization</h3>
+          <p class="text-gray-600">Building and optimizing APIs for seamless integration between applications and third-party services.</p>
+          <a href="contact.html?subject=API%20Development%20%26%20Optimization" class="block mt-4 font-bold text-blue-600 hover:underline">REQUEST QUOTATION</a>
+        </div>
+        
+        <!-- Service Card: Custom Software Solutions -->
+        <div class="bg-white p-6 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:shadow-lg">
+          <h3 class="text-xl font-bold mb-4">Custom Software Solutions</h3>
+          <p class="text-gray-600">Developing tailored software solutions to meet specific business requirements and improve operational efficiency.</p>
+          <a href="contact.html?subject=Custom%20Software%20Solutions" class="block mt-4 font-bold text-blue-600 hover:underline">REQUEST QUOTATION</a>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+  
+  <!-- ========== Footer Section ========== -->
+  <footer class="bg-gray-800 text-white py-8 mt-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <!-- Social Media Links -->
+      <div class="flex justify-center space-x-6 mb-8">
+        <a href="https://facebook.com/techbros631" target="_blank" class="hover:text-blue-200 transition-colors">
+          <i class="fab fa-facebook text-2xl"></i>
+        </a>
+        <a href="https://x.com/techbros631" target="_blank" class="hover:text-blue-200 transition-colors">
+          <i class="fab fa-twitter text-2xl"></i>
+        </a>
+        <a href="https://wa.me/254798985389?text=Hello%20I%27m%20interested%20in%20your%20services" target="_blank" class="hover:text-blue-200 transition-colors">
+          <i class="fab fa-whatsapp text-2xl"></i>
+        </a>
+        <a href="https://linkedin.com/in/GideonMwiti" target="_blank" class="hover:text-blue-200 transition-colors">
+          <i class="fab fa-linkedin text-2xl"></i>
+        </a>
+        <a href="https://github.com/GideonMwiti" target="_blank" class="hover:text-blue-200 transition-colors">
+          <i class="fab fa-github text-2xl"></i>
+        </a>
+        <a href="mailto:mwitigideon002@gmail.com" class="hover:text-blue-200 transition-colors">
+          <i class="fas fa-envelope text-2xl"></i>
+        </a>
+        <a href="tel:+254798985389" class="hover:text-blue-200 transition-colors">
+          <i class="fas fa-phone text-2xl"></i>
+        </a>
+      </div>
+      <!-- Copyright Notice -->
+      <div class="border-t border-blue-400 pt-6 text-center">
+        <p class="text-blue-100">
+          &copy; <span id="currentYear"></span> GIDEON-MWITI. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- ========== JavaScript Section ========== -->
+  
+  <!-- Script to automatically update the copyright year -->
+  <script>
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+  </script>
+  
+ 
+<script>
+  // Highlight active navigation link
+  document.addEventListener('DOMContentLoaded', function() {
+      const navLinks = document.querySelectorAll('.nav-link');
+      const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  
+      navLinks.forEach(link => {
+          const linkPage = link.getAttribute('href');
+          
+          // Add active styles if URLs match
+          if (linkPage === currentPage) {
+              link.classList.add('text-blue-600', 'border-blue-600');
+              link.classList.remove('text-gray-600', 'border-transparent');
+          }
+      });
+  });
+  </script>
+  
+  <!-- Script for mobile menu toggle functionality -->
+  <script>
+    // Select the mobile menu button and menu container
+    const mobileMenuButton = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    // Toggle mobile menu visibility when button is clicked
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    
+    // Hide mobile menu when any mobile link is clicked
+    document.querySelectorAll('#mobileMenu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+  </script>
+  
+</body>
+</html>

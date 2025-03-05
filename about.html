@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ========================================= -->
+  <!-- Meta Data and External Resource Links -->
+  <!-- ========================================= -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GIDEON-MWITI</title>
+  
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <!-- Tailwind CSS for utility-first styling -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+  
+  <!-- ========================================= -->
+  <!-- Navigation Section -->
+  <!-- ========================================= -->
+  <nav class="fixed w-full bg-white shadow-lg z-50">
+    <!-- Navigation Container -->
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <!-- Brand Logo -->
+      <div class="flex items-center">
+        <span class="text-xl font-bold text-blue-600">GIDEON-MWITI</span>
+      </div>
+     <!--  Desktop Navigation  -->
+<div class="hidden md:flex space-x-8">
+  <a href="index.html" class="nav-link text-gray-600 font-bold hover:text-blue-600 flex items-center relative border-b-2 border-transparent transition-colors duration-200">
+    <i class="fas fa-home mr-2"></i> Home
+  </a>
+  <a href="about.html" class="nav-link text-gray-600 font-bold hover:text-blue-600 flex items-center relative border-b-2 border-transparent transition-colors duration-200">
+    <i class="fas fa-user mr-2"></i> About
+  </a>
+  <a href="services.html" class="nav-link text-gray-600 font-bold hover:text-blue-600 flex items-center relative border-b-2 border-transparent transition-colors duration-200">
+    <i class="fas fa-cogs mr-2"></i> Services
+  </a>
+  <a href="portfolio.html" class="nav-link text-gray-600 font-bold hover:text-blue-600 flex items-center relative border-b-2 border-transparent transition-colors duration-200">
+    <i class="fas fa-briefcase mr-2"></i> Portfolio
+  </a>
+  <a href="contact.html" class="nav-link text-gray-600 font-bold hover:text-blue-600 flex items-center relative border-b-2 border-transparent transition-colors duration-200">
+    <i class="fas fa-envelope mr-2"></i> Contact
+  </a>
+</div>
+
+      <!-- Mobile Menu Toggle Button (visible on small screens) -->
+      <div class="md:hidden">
+        <button id="menuBtn" class="text-gray-600">
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Mobile Navigation Menu (initially hidden) -->
+    <div id="mobileMenu" class="mobile-menu md:hidden bg-white hidden">
+      <div class="px-4 py-2 space-y-4">
+        <a href="index.html" class="block text-gray-600 font-bold hover:text-blue-600 flex items-center">
+          <i class="fas fa-home mr-2"></i> Home
+        </a>
+        <a href="about.html" class="block text-gray-600 font-bold hover:text-blue-600 flex items-center">
+          <i class="fas fa-user mr-2"></i> About
+        </a>
+        <a href="services.html" class="block text-gray-600 font-bold hover:text-blue-600 flex items-center">
+          <i class="fas fa-cogs mr-2"></i> Services
+        </a>
+        <a href="portfolio.html" class="block text-gray-600 font-bold hover:text-blue-600 flex items-center">
+          <i class="fas fa-briefcase mr-2"></i> Portfolio
+        </a>
+        <a href="contact.html" class="block text-gray-600 font-bold hover:text-blue-600 flex items-center">
+          <i class="fas fa-envelope mr-2"></i> Contact
+        </a>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- ========================================= -->
+  <!-- Main About Section with Tabbed Content -->
+  <!-- ========================================= -->
+  <section class="container mx-auto px-4 flex flex-col md:flex-row items-start md:items-center py-8 pt-20 md:pt-24">
+    
+    <!-- Left Column: Profile Image -->
+    <div class="w-full md:w-1/3 flex justify-center mb-8 md:mb-0">
+      <img src="profile.jpg" alt="Profile Image" class="rounded-lg shadow-lg max-w-xs" />
+    </div>
+    
+    <!-- Right Column: Introduction and Tabs -->
+    <div class="w-full md:w-2/3 md:pl-12">
+      <!-- Introduction Text -->
+      <p class="mb-6 leading-relaxed text-gray-700">
+        I am an IT Project Manager with a passion for software development and a keen interest in AI & ML innovations. With extensive experience managing both corporate and freelance projects, I leverage agile methodologies and digital transformation strategies to deliver cutting-edge IT solutions. Currently pursuing a BSc in Project Planning & Management at Kisii University, I combine academic rigor with hands-on expertise—from developing robust web and mobile applications to integrating AI & ML technologies for enhanced automation and data-driven decision-making.
+      </p>
+      <!-- Update your tab navigation with these classes -->
+<nav class="flex space-x-4 font-bold border-b-2 pb-2 mb-6">
+  <button class="tab-link px-4 py-2 text-gray-500 hover:text-blue-500 transition-colors duration-200 border-b-2 border-transparent active-tab:text-blue-500 active-tab:border-blue-500" data-tab="skills">
+    <i class="fas fa-code mr-2"></i> Skills
+  </button>
+  <button class="tab-link px-4 py-2 text-gray-500 hover:text-blue-500 transition-colors duration-200 border-b-2 border-transparent" data-tab="experience">
+    <i class="fas fa-briefcase mr-2"></i> Experience
+  </button>
+  <button class="tab-link px-4 py-2 text-gray-500 hover:text-blue-500 transition-colors duration-200 border-b-2 border-transparent" data-tab="education">
+    <i class="fas fa-graduation-cap mr-2"></i> Education
+  </button>
+  <button class="tab-link px-4 py-2 text-gray-500 hover:text-blue-500 transition-colors duration-200 border-b-2 border-transparent" data-tab="testimonial">
+    <i class="fas fa-comments mr-2"></i> Reviews
+  </button>
+</nav>
+
+<script>
+// JavaScript to handle active state
+document.addEventListener('DOMContentLoaded', function() {
+    const tabs = document.querySelectorAll('.tab-link');
+    
+    // Set initial active tab (Skills)
+    tabs[0].classList.add('text-blue-500', 'border-blue-500');
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            // Remove active styles from all tabs
+            tabs.forEach(t => t.classList.remove('text-blue-500', 'border-blue-500'));
+            
+            // Add active styles to clicked tab
+            this.classList.add('text-blue-500', 'border-blue-500');
+        });
+    });
+});
+</script>
+      <!-- Tabs Content -->
+      <div class="tab-container">
+        <!-- Skills Tab Content -->
+        <div id="skills" class="tab-content bg-white rounded-lg shadow-md p-6">
+          <h2 class="text-2xl font-semibold text-gray-800 mb-4">Skills</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Project Management Skills -->
+            <div>
+              <h3 class="text-lg font-semibold text-gray-700 mb-2">Project Management</h3>
+              <ul class="list-disc pl-5 text-gray-600">
+                <li>Project Planning &amp; Scheduling</li>
+                <li>Risk Management</li>
+                <li>Agile &amp; Scrum Methodologies</li>
+                <li>Stakeholder Communication</li>
+              </ul>
+            </div>
+            <!-- AI & Machine Learning Skills -->
+            <div>
+              <h3 class="text-lg font-semibold text-gray-700 mb-2">AI &amp; Machine Learning</h3>
+              <ul class="list-disc pl-5 text-gray-600">
+                <li>Data Analytics &amp; AI</li>
+                <li>Machine Learning (TensorFlow, PyTorch)</li>
+                <li>Data Visualization (Pandas, Matplotlib)</li>
+              </ul>
+            </div>
+            <!-- Software Development Skills -->
+            <div>
+              <h3 class="text-lg font-semibold text-gray-700 mb-2">Software Development</h3>
+              <ul class="list-disc pl-5 text-gray-600">
+                <li>Programming Languages (Python, PHP, JavaScript, HTML, CSS)</li>
+                <li>Frameworks &amp; Libraries (Django, Laravel, Node.js, React.js, React Native)</li>
+                <li>Database (MySQL, Firestore)</li>
+                <li>USSD &amp; SMS APIs (Africa's Talking, Twilio)</li>
+                <li>API Testing (Postman)</li>
+                <li>Version Control (Git, Github)</li>
+                <li>Cloud Deployment &amp; Hosting (Render, AWS, Firebase, etc.)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Experience Tab Content -->
+        <div id="experience" class="tab-content hidden bg-white rounded-lg shadow-md p-6">
+          <h2 class="text-2xl font-semibold text-gray-800 mb-4">Experience</h2>
+          <div class="space-y-4">
+            <!-- Freelance Experience Block -->
+            <div class="border-l-4 border-blue-500 pl-4">
+              <h3 class="text-lg font-semibold">Freelancer (2023 - Present)</h3>
+              <p class="text-gray-600">
+                Worked with clients on 
+                <a href="https://www.upwork.com" target="_blank" class="text-blue-500 font-medium hover:underline">Upwork</a>
+                and 
+                <a href="https://www.fiverr.com" target="_blank" class="text-blue-500 font-medium hover:underline">Fiverr</a>,
+                developing innovative software solutions by leveraging AI &amp; Machine Learning.
+              </p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Education Tab Content -->
+        <div id="education" class="tab-content hidden bg-white rounded-lg shadow-md p-6">
+          <h2 class="text-2xl font-semibold text-gray-800 mb-4">Education</h2>
+          <div class="border-l-4 border-green-500 pl-4">
+            <h3 class="text-lg font-semibold">BSc in Project Planning &amp; Management</h3>
+            <p class="text-gray-600">
+              <a href="https://kisiiuniversity.ac.ke/" target="_blank" class="text-blue-500 font-medium hover:underline">
+                Kisii University
+              </a> (2023 - Present)
+            </p>
+          </div>
+        </div>
+      <!-- Reviews/Testimonials Tab Content -->
+<div id="testimonial" class="tab-content hidden bg-white rounded-lg shadow-md p-6">
+  <h2 class="text-2xl font-semibold text-gray-800 mb-4">Reviews</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    
+    <!-- Testimonial 1 -->
+    <div class="border rounded-lg p-4 shadow text-center">
+      <!-- Profile Picture -->
+      <div class="flex justify-center mb-2">
+        <img src="griffine.jpg" alt="Griffine Ombogo" class="w-16 h-16 rounded-full">
+      </div>
+
+      <!-- Star Ratings -->
+      <div class="flex justify-center mb-2">
+        <i class="fas fa-star text-yellow-400"></i>
+        <i class="fas fa-star text-yellow-400"></i>
+        <i class="fas fa-star text-yellow-400"></i>
+        <i class="fas fa-star text-yellow-400"></i>
+        <i class="fas fa-star text-yellow-400"></i>
+      </div>
+
+      <!-- Testimonial Text -->
+      <p class="mb-2 text-gray-700">
+        "Gideon delivered an outstanding USSD solution and was very professional throughout the project."
+      </p>
+
+      <!-- Name -->
+      <p class="font-semibold">Griffine Ombogo</p>
+
+      <!-- Title -->
+      <p class="text-gray-600">Software Engineer</p>
+
+      <!-- Company -->
+      <p>
+        <a href="https://slytexsoftwares.vercel.app" target="_blank" class="text-blue-500 font-medium hover:underline">
+          Slytex Softwares
+        </a>
+      </p>
+
+      <!-- View Profile Link -->
+      <a href="https://griffolab.netlify.app/" target="_blank" class="text-blue-500 font-medium hover:underline">
+        View Profile
+      </a>
+    </div>
+
+    <!-- Testimonial 2 -->
+    <div class="border rounded-lg p-4 shadow text-center">
+      <!-- Profile Picture -->
+      <div class="flex justify-center mb-2">
+        <img src="terry.png" alt="Teresa Abuya" class="w-16 h-16 rounded-full">
+      </div>
+
+      <!-- Star Ratings -->
+      <div class="flex justify-center mb-2">
+        <i class="fas fa-star text-yellow-400"></i>
+        <i class="fas fa-star text-yellow-400"></i>
+        <i class="fas fa-star text-yellow-400"></i>
+        <i class="fas fa-star text-yellow-400"></i>
+        <i class="fas fa-star text-yellow-400"></i>
+      </div>
+
+      <!-- Testimonial Text -->
+      <p class="mb-2 text-gray-700">
+        "Great communication and technical expertise. Highly recommended!"
+      </p>
+
+      <!-- Name -->
+      <p class="font-semibold">Teresa Abuya</p>
+
+      <!-- Title -->
+      <p class="text-gray-600">Lecturer</p>
+
+      <!-- Company -->
+      <p>
+        <a href="https://kisiiuniversity.ac.ke/" target="_blank" class="text-blue-500 font-medium hover:underline">
+          Kisii University
+        </a>
+      </p>
+
+      <!-- View Profile Link -->
+      <a href="https://www.linkedin.com/in/teresa-abuya-b55aa532/" target="_blank" class="text-blue-500 font-medium hover:underline">
+        View Profile
+      </a>
+    </div>
+
+    <!-- Testimonial 3 -->
+    <div class="border rounded-lg p-4 shadow text-center">
+      <!-- Profile Picture -->
+      <div class="flex justify-center mb-2">
+        <img src="irene.jpg" alt="Irene Mutheu" class="w-16 h-16 rounded-full">
+      </div>
+
+      <!-- Star Ratings -->
+      <div class="flex justify-center mb-2">
+        <i class="fas fa-star text-yellow-400"></i>
+        <i class="fas fa-star text-yellow-400"></i>
+        <i class="fas fa-star text-yellow-400"></i>
+        <i class="fas fa-star text-yellow-400"></i>
+        <i class="fas fa-star text-yellow-400"></i>
+      </div>
+
+      <!-- Testimonial Text -->
+      <p class="mb-2 text-gray-700">
+        "Gideon created a stunning portfolio that highlights my career perfectly. His professionalism and attention to detail were exceptional."
+      </p>
+
+      <!-- Name -->
+      <p class="font-semibold">Irene Mutheu</p>
+
+      <!-- Title -->
+      <p class="text-gray-600">Model & Actress</p>
+
+      <!-- Company -->
+      <p>Freelance Model</p>
+
+      <!-- View Profile Link -->
+      <a href="https://irenemutheu.netlify.app" target="_blank" class="text-blue-500 font-medium hover:underline">
+        View Profile
+      </a>
+    </div>
+
+  </div>
+</div>
+
+
+        
+      </div><!-- End of Tabs Container -->
+    </div><!-- End of Right Column -->
+  </section>
+  
+  <!-- ========================================= -->
+  <!-- Footer Section -->
+  <!-- ========================================= -->
+  <footer class="bg-gray-800 text-white py-8 mt-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <!-- Social Media Links -->
+      <div class="flex justify-center space-x-6 mb-8">
+        <a href="https://facebook.com/techbros631" target="_blank" class="hover:text-blue-200 transition-colors">
+          <i class="fab fa-facebook text-2xl"></i>
+        </a>
+        <a href="https://x.com/techbros631" target="_blank" class="hover:text-blue-200 transition-colors">
+          <i class="fab fa-twitter text-2xl"></i>
+        </a>
+        <a href="https://wa.me/254798985389?text=Hello%20I%27m%20interested%20in%20your%20services" target="_blank" class="hover:text-blue-200 transition-colors">
+          <i class="fab fa-whatsapp text-2xl"></i>
+        </a>
+        <a href="https://linkedin.com/in/GideonMwiti" target="_blank" class="hover:text-blue-200 transition-colors">
+          <i class="fab fa-linkedin text-2xl"></i>
+        </a>
+        <a href="https://github.com/GideonMwiti" target="_blank" class="hover:text-blue-200 transition-colors">
+          <i class="fab fa-github text-2xl"></i>
+        </a>
+        <a href="mailto:mwitigideon002@gmail.com" class="hover:text-blue-200 transition-colors">
+          <i class="fas fa-envelope text-2xl"></i>
+        </a>
+        <a href="tel:+254798985389" class="hover:text-blue-200 transition-colors">
+          <i class="fas fa-phone text-2xl"></i>
+        </a>
+      </div>
+      <!-- Copyright Information -->
+      <div class="border-t border-blue-400 pt-6 text-center">
+        <p class="text-blue-100">
+          &copy; <span id="currentYear"></span> GIDEON-MWITI. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- ========================================= -->
+  <!-- JavaScript Functionality -->
+  <!-- ========================================= -->
+  
+  <!-- Update Copyright Year Dynamically -->
+  <script>
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+  </script>
+  
+  <!-- Mobile Menu Toggle Script -->
+  <script>
+    // Select mobile menu button and container
+    const mobileMenuButton = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    // Toggle mobile menu visibility on button click
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    
+    // Hide mobile menu when any link is clicked
+    document.querySelectorAll('#mobileMenu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+  </script>
+  
+  <!-- Tab Switching Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Retrieve all tab links and tab content elements
+      const tabLinks = document.querySelectorAll('.tab-link');
+      const tabContents = document.querySelectorAll('.tab-content');
+      
+      // Add click event listener to each tab link
+      tabLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          // Remove the active state from all tabs and hide all content
+          tabLinks.forEach(item => item.classList.remove('active-tab'));
+          tabContents.forEach(content => content.classList.add('hidden'));
+          
+          // Activate clicked tab and display its content
+          this.classList.add('active-tab');
+          const tabId = this.getAttribute('data-tab');
+          document.getElementById(tabId).classList.remove('hidden');
+        });
+      });
+    });
+  </script>
+<script>
+  // Highlight active navigation link
+  document.addEventListener('DOMContentLoaded', function() {
+      const navLinks = document.querySelectorAll('.nav-link');
+      const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  
+      navLinks.forEach(link => {
+          const linkPage = link.getAttribute('href');
+          
+          // Add active styles if URLs match
+          if (linkPage === currentPage) {
+              link.classList.add('text-blue-600', 'border-blue-600');
+              link.classList.remove('text-gray-600', 'border-transparent');
+          }
+      });
+  });
+  </script>
+</body>
+</html>
