@@ -6,6 +6,29 @@
   <title>GIDEON-MWITI</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Custom CSS for mobile optimization */
+    @media (max-width: 768px) {
+      .about-content {
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
+      .tab-nav {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+      .tab-button {
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+      }
+      .testimonial-grid {
+        grid-template-columns: 1fr !important;
+      }
+      .profile-image {
+        max-width: 250px;
+      }
+    }
+  </style>
 </head>
 <body class="bg-gray-100">
   <!-- Navigation -->
@@ -68,27 +91,27 @@
   <section class="container mx-auto px-4 flex flex-col md:flex-row items-start py-8 pt-24 md:pt-32">
     <!-- Profile Image -->
     <div class="w-full md:w-1/3 flex justify-center mb-8 md:mb-0 px-2">
-      <img src="profile.jpg" alt="Profile" class="rounded-lg shadow-lg w-full max-w-[250px] md:max-w-xs">
+      <img src="profile.jpg" alt="Profile" class="rounded-lg shadow-lg profile-image w-full max-w-xs">
     </div>
 
     <!-- Content -->
     <div class="w-full md:w-2/3 md:pl-8 lg:pl-12 px-2">
-      <p class="mb-6 text-gray-700 text-[0.9rem] leading-[1.5] md:text-base">
-        I am an IT Project Manager with a passion for software development and a keen interest in AI &amp; ML innovations. With extensive experience managing both corporate and freelance projects, I leverage agile methodologies and digital transformation strategies to deliver cutting-edge IT solutions. Currently pursuing a BSc in Project Planning &amp; Management at Kisii University, I combine academic rigor with hands-on expertise—from developing robust web and mobile applications to integrating AI &amp; ML technologies for enhanced automation and data-driven decision-making.
+      <p class="mb-6 text-gray-700 leading-relaxed about-content">
+        I am an IT Project Manager with a passion for software development and a keen interest in AI & ML innovations. With extensive experience managing both corporate and freelance projects, I leverage agile methodologies and digital transformation strategies to deliver cutting-edge IT solutions. Currently pursuing a BSc in Project Planning & Management at Kisii University, I combine academic rigor with hands-on expertise—from developing robust web and mobile applications to integrating AI & ML technologies for enhanced automation and data-driven decision-making.
       </p>
 
       <!-- Tabs Navigation -->
-      <nav class="flex flex-wrap gap-2 md:flex-nowrap font-bold border-b-2 pb-2 mb-6 overflow-x-auto">
-        <button class="tab-button px-4 py-2 text-sm text-gray-500 hover:text-blue-500 transition-colors duration-200 border-b-2 border-transparent md:px-3 md:text-base" data-tab="skills">
+      <nav class="flex tab-nav space-x-2 font-bold border-b-2 pb-2 mb-6 overflow-x-auto">
+        <button class="tab-button px-3 py-2 text-gray-500 hover:text-blue-500 transition-colors duration-200 border-b-2 border-transparent active-tab:text-blue-500 active-tab:border-blue-500 whitespace-nowrap" data-tab="skills">
           <i class="fas fa-code mr-2"></i> Skills
         </button>
-        <button class="tab-button px-4 py-2 text-sm text-gray-500 hover:text-blue-500 transition-colors duration-200 border-b-2 border-transparent md:px-3 md:text-base" data-tab="experience">
+        <button class="tab-button px-3 py-2 text-gray-500 hover:text-blue-500 transition-colors duration-200 border-b-2 border-transparent" data-tab="experience">
           <i class="fas fa-briefcase mr-2"></i> Experience
         </button>
-        <button class="tab-button px-4 py-2 text-sm text-gray-500 hover:text-blue-500 transition-colors duration-200 border-b-2 border-transparent md:px-3 md:text-base" data-tab="education">
+        <button class="tab-button px-3 py-2 text-gray-500 hover:text-blue-500 transition-colors duration-200 border-b-2 border-transparent" data-tab="education">
           <i class="fas fa-graduation-cap mr-2"></i> Education
         </button>
-        <button class="tab-button px-4 py-2 text-sm text-gray-500 hover:text-blue-500 transition-colors duration-200 border-b-2 border-transparent md:px-3 md:text-base" data-tab="testimonial">
+        <button class="tab-button px-3 py-2 text-gray-500 hover:text-blue-500 transition-colors duration-200 border-b-2 border-transparent" data-tab="testimonial">
           <i class="fas fa-comments mr-2"></i> Reviews
         </button> 
       </nav>
@@ -96,6 +119,10 @@
       <!-- Tabs Content -->
       <div class="tab-container">
         <!-- Skills Tab -->
+        <div id="skills" class="tab-content bg-white rounded-lg shadow-md p-4 md:p-6">
+          <h2 class="text-xl md:text-2xl font-semibold text-gray-800 mb-4">Skills</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+            <!-- Skills Tab Content -->
         <div id="skills" class="tab-content bg-white rounded-lg shadow-md p-6">
           <h2 class="text-2xl font-semibold text-gray-800 mb-4">Skills</h2>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -133,8 +160,12 @@
             </div>
           </div>
         </div>
+          </div>
+        </div>
 
         <!-- Experience Tab -->
+        <div id="experience" class="tab-content hidden bg-white rounded-lg shadow-md p-4 md:p-6">
+          <!-- Experience Tab Content -->
         <div id="experience" class="tab-content hidden bg-white rounded-lg shadow-md p-6">
           <h2 class="text-2xl font-semibold text-gray-800 mb-4">Experience</h2>
           <div class="space-y-4">
@@ -151,8 +182,11 @@
             </div>
           </div>
         </div>
+        </div>
 
         <!-- Education Tab -->
+        <div id="education" class="tab-content hidden bg-white rounded-lg shadow-md p-4 md:p-6">
+           <!-- Education Tab Content -->
         <div id="education" class="tab-content hidden bg-white rounded-lg shadow-md p-6">
           <h2 class="text-2xl font-semibold text-gray-800 mb-4">Education</h2>
           <div class="border-l-4 border-green-500 pl-4">
@@ -164,87 +198,135 @@
             </p>
           </div>
         </div>
+        </div>
 
         <!-- Testimonials Tab -->
-        <div id="testimonial" class="tab-content hidden bg-white rounded-lg shadow-md p-6">
-          <h2 class="text-2xl font-semibold text-gray-800 mb-4">Reviews</h2>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Testimonial 1 -->
-            <div class="border rounded-lg p-4 shadow text-center">
-              <div class="flex justify-center mb-2">
-                <img src="griffine.jpg" alt="Griffine Ombogo" class="w-16 h-16 rounded-full">
-              </div>
-              <div class="flex justify-center mb-2">
-                <i class="fas fa-star text-yellow-400"></i>
-                <i class="fas fa-star text-yellow-400"></i>
-                <i class="fas fa-star text-yellow-400"></i>
-                <i class="fas fa-star text-yellow-400"></i>
-                <i class="fas fa-star text-yellow-400"></i>
-              </div>
-              <p class="mb-2 text-gray-700">
-                I had the pleasure of working with Gideon on the AfyaAxis project. He delivered an outstanding USSD solution and consistently demonstrated exceptional professionalism throughout our collaboration.
-              </p>
-              <p class="font-semibold">Griffine Ombogo</p>
-              <p class="text-gray-600">Software Engineer</p>
-              <p>
-                <a href="https://slytexsoftwares.vercel.app" target="_blank" class="text-blue-500 font-medium hover:underline">
-                  Slytex Softwares
-                </a>
-              </p>
-              <a href="https://griffolab.netlify.app/" target="_blank" class="text-blue-500 font-medium hover:underline">
-                View Profile
-              </a>
-            </div>
+        <div id="testimonial" class="tab-content hidden bg-white rounded-lg shadow-md p-4 md:p-6">
+          <h2 class="text-xl md:text-2xl font-semibold text-gray-800 mb-4">Reviews</h2>
+          <div class="grid testimonial-grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <!-- Reviews/Testimonials Tab Content -->
+<div id="testimonial" class="tab-content hidden bg-white rounded-lg shadow-md p-6">
+  <h2 class="text-2xl font-semibold text-gray-800 mb-4">Reviews</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    
+    <!-- Testimonial 1 -->
+    <div class="border rounded-lg p-4 shadow text-center">
+      <!-- Profile Picture -->
+      <div class="flex justify-center mb-2">
+        <img src="griffine.jpg" alt="Griffine Ombogo" class="w-16 h-16 rounded-full">
+      </div>
 
-            <!-- Testimonial 2 -->
-            <div class="border rounded-lg p-4 shadow text-center">
-              <div class="flex justify-center mb-2">
-                <img src="terry.png" alt="Teresa Abuya" class="w-16 h-16 rounded-full">
-              </div>
-              <div class="flex justify-center mb-2">
-                <i class="fas fa-star text-yellow-400"></i>
-                <i class="fas fa-star text-yellow-400"></i>
-                <i class="fas fa-star text-yellow-400"></i>
-                <i class="fas fa-star text-yellow-400"></i>
-                <i class="fas fa-star text-yellow-400"></i>
-              </div>
-              <p class="mb-2 text-gray-700">
-                "Great communication and technical expertise. Highly recommended!"
-              </p>
-              <p class="font-semibold">Teresa Abuya</p>
-              <p class="text-gray-600">Lecturer</p>
-              <p>
-                <a href="https://kisiiuniversity.ac.ke/" target="_blank" class="text-blue-500 font-medium hover:underline">
-                  Kisii University
-                </a>
-              </p>
-              <a href="https://www.linkedin.com/in/teresa-abuya-b55aa532/" target="_blank" class="text-blue-500 font-medium hover:underline">
-                View Profile
-              </a>
-            </div>
+      <!-- Star Ratings -->
+      <div class="flex justify-center mb-2">
+        <i class="fas fa-star text-yellow-400"></i>
+        <i class="fas fa-star text-yellow-400"></i>
+        <i class="fas fa-star text-yellow-400"></i>
+        <i class="fas fa-star text-yellow-400"></i>
+        <i class="fas fa-star text-yellow-400"></i>
+      </div>
 
-            <!-- Testimonial 3 -->
-            <div class="border rounded-lg p-4 shadow text-center">
-              <div class="flex justify-center mb-2">
-                <img src="irene.jpg" alt="Irene Mutheu" class="w-16 h-16 rounded-full">
-              </div>
-              <div class="flex justify-center mb-2">
-                <i class="fas fa-star text-yellow-400"></i>
-                <i class="fas fa-star text-yellow-400"></i>
-                <i class="fas fa-star text-yellow-400"></i>
-                <i class="fas fa-star text-yellow-400"></i>
-                <i class="fas fa-star text-yellow-400"></i>
-              </div>
-              <p class="mb-2 text-gray-700">
-                "Gideon created a stunning portfolio that highlights my career perfectly. His professionalism and attention to detail were exceptional."
-              </p>
-              <p class="font-semibold">Irene Mutheu</p>
-              <p class="text-gray-600">Model & Actress</p>
-              <p>Freelance Model</p>
-              <a href="https://irenemutheu.netlify.app" target="_blank" class="text-blue-500 font-medium hover:underline">
-                View Profile
-              </a>
-            </div>
+      <!-- Testimonial Text -->
+      <p class="mb-2 text-gray-700">
+        I had the pleasure of working with Gideon on the AfyaAxis project. He delivered an outstanding USSD solution and consistently demonstrated exceptional professionalism throughout our collaboration.
+      </p>
+
+      <!-- Name -->
+      <p class="font-semibold">Griffine Ombogo</p>
+
+      <!-- Title -->
+      <p class="text-gray-600">Software Engineer</p>
+
+      <!-- Company -->
+      <p>
+        <a href="https://slytexsoftwares.vercel.app" target="_blank" class="text-blue-500 font-medium hover:underline">
+          Slytex Softwares
+        </a>
+      </p>
+
+      <!-- View Profile Link -->
+      <a href="https://griffolab.netlify.app/" target="_blank" class="text-blue-500 font-medium hover:underline">
+        View Profile
+      </a>
+    </div>
+
+    <!-- Testimonial 2 -->
+    <div class="border rounded-lg p-4 shadow text-center">
+      <!-- Profile Picture -->
+      <div class="flex justify-center mb-2">
+        <img src="terry.png" alt="Teresa Abuya" class="w-16 h-16 rounded-full">
+      </div>
+
+      <!-- Star Ratings -->
+      <div class="flex justify-center mb-2">
+        <i class="fas fa-star text-yellow-400"></i>
+        <i class="fas fa-star text-yellow-400"></i>
+        <i class="fas fa-star text-yellow-400"></i>
+        <i class="fas fa-star text-yellow-400"></i>
+        <i class="fas fa-star text-yellow-400"></i>
+      </div>
+
+      <!-- Testimonial Text -->
+      <p class="mb-2 text-gray-700">
+        "Great communication and technical expertise. Highly recommended!"
+      </p>
+
+      <!-- Name -->
+      <p class="font-semibold">Teresa Abuya</p>
+
+      <!-- Title -->
+      <p class="text-gray-600">Lecturer</p>
+
+      <!-- Company -->
+      <p>
+        <a href="https://kisiiuniversity.ac.ke/" target="_blank" class="text-blue-500 font-medium hover:underline">
+          Kisii University
+        </a>
+      </p>
+
+      <!-- View Profile Link -->
+      <a href="https://www.linkedin.com/in/teresa-abuya-b55aa532/" target="_blank" class="text-blue-500 font-medium hover:underline">
+        View Profile
+      </a>
+    </div>
+
+    <!-- Testimonial 3 -->
+    <div class="border rounded-lg p-4 shadow text-center">
+      <!-- Profile Picture -->
+      <div class="flex justify-center mb-2">
+        <img src="irene.jpg" alt="Irene Mutheu" class="w-16 h-16 rounded-full">
+      </div>
+
+      <!-- Star Ratings -->
+      <div class="flex justify-center mb-2">
+        <i class="fas fa-star text-yellow-400"></i>
+        <i class="fas fa-star text-yellow-400"></i>
+        <i class="fas fa-star text-yellow-400"></i>
+        <i class="fas fa-star text-yellow-400"></i>
+        <i class="fas fa-star text-yellow-400"></i>
+      </div>
+
+      <!-- Testimonial Text -->
+      <p class="mb-2 text-gray-700">
+        "Gideon created a stunning portfolio that highlights my career perfectly. His professionalism and attention to detail were exceptional."
+      </p>
+
+      <!-- Name -->
+      <p class="font-semibold">Irene Mutheu</p>
+
+      <!-- Title -->
+      <p class="text-gray-600">Model & Actress</p>
+
+      <!-- Company -->
+      <p>Freelance Model</p>
+
+      <!-- View Profile Link -->
+      <a href="https://irenemutheu.netlify.app" target="_blank" class="text-blue-500 font-medium hover:underline">
+        View Profile
+      </a>
+    </div>
+
+  </div>
+</div>
           </div>
         </div>
       </div>
@@ -253,46 +335,50 @@
 
   <!-- Footer -->
   <footer class="bg-gray-800 text-white py-8 mt-16">
-    <div class="max-w-6xl mx-auto px-4">
-      <!-- Social Media Links -->
-      <div class="flex justify-center space-x-6 mb-8">
-        <a href="https://facebook.com/techbros631" target="_blank" class="hover:text-blue-200 transition-colors">
-          <i class="fab fa-facebook text-2xl"></i>
-        </a>
-        <a href="https://x.com/techbros631" target="_blank" class="hover:text-blue-200 transition-colors">
-          <i class="fab fa-twitter text-2xl"></i>
-        </a>
-        <a href="https://wa.me/254798985389?text=Hello%20I%27m%20interested%20in%20your%20services" target="_blank" class="hover:text-blue-200 transition-colors">
-          <i class="fab fa-whatsapp text-2xl"></i>
-        </a>
-        <a href="https://linkedin.com/in/GideonMwiti" target="_blank" class="hover:text-blue-200 transition-colors">
-          <i class="fab fa-linkedin text-2xl"></i>
-        </a>
-        <a href="https://github.com/GideonMwiti" target="_blank" class="hover:text-blue-200 transition-colors">
-          <i class="fab fa-github text-2xl"></i>
-        </a>
-        <a href="mailto:mwitigideon002@gmail.com" class="hover:text-blue-200 transition-colors">
-          <i class="fas fa-envelope text-2xl"></i>
-        </a>
-        <a href="tel:+254798985389" class="hover:text-blue-200 transition-colors">
-          <i class="fas fa-phone text-2xl"></i>
-        </a>
+    <footer class="bg-gray-800 text-white py-8 mt-16">
+      <div class="max-w-6xl mx-auto px-4">
+        <!-- Social Media Links -->
+        <div class="flex justify-center space-x-6 mb-8">
+          <a href="https://facebook.com/techbros631" target="_blank" class="hover:text-blue-200 transition-colors">
+            <i class="fab fa-facebook text-2xl"></i>
+          </a>
+          <a href="https://x.com/techbros631" target="_blank" class="hover:text-blue-200 transition-colors">
+            <i class="fab fa-twitter text-2xl"></i>
+          </a>
+          <a href="https://wa.me/254798985389?text=Hello%20I%27m%20interested%20in%20your%20services" target="_blank" class="hover:text-blue-200 transition-colors">
+            <i class="fab fa-whatsapp text-2xl"></i>
+          </a>
+          <a href="https://linkedin.com/in/GideonMwiti" target="_blank" class="hover:text-blue-200 transition-colors">
+            <i class="fab fa-linkedin text-2xl"></i>
+          </a>
+          <a href="https://github.com/GideonMwiti" target="_blank" class="hover:text-blue-200 transition-colors">
+            <i class="fab fa-github text-2xl"></i>
+          </a>
+          <a href="mailto:mwitigideon002@gmail.com" class="hover:text-blue-200 transition-colors">
+            <i class="fas fa-envelope text-2xl"></i>
+          </a>
+          <a href="tel:+254798985389" class="hover:text-blue-200 transition-colors">
+            <i class="fas fa-phone text-2xl"></i>
+          </a>
+        </div>
+        <!-- Copyright Information -->
+        <div class="border-t border-blue-400 pt-6 text-center">
+          <p class="text-blue-100">
+            &copy; <span id="currentYear"></span> GIDEON-MWITI. All rights reserved.
+          </p>
+        </div>
       </div>
-      <!-- Copyright Information -->
-      <div class="border-t border-blue-400 pt-6 text-center">
-        <p class="text-blue-100">
-          &copy; <span id="currentYear"></span> GIDEON-MWITI. All rights reserved.
-        </p>
-      </div>
-    </div>
+    </footer>
   </footer>
 
   <!-- JavaScript -->
   <script>
+    // Existing JavaScript remains same
     document.addEventListener('DOMContentLoaded', function() {
       // Mobile menu toggle
       const mobileMenuButton = document.getElementById('menuBtn');
       const mobileMenu = document.getElementById('mobileMenu');
+      
       mobileMenuButton.addEventListener('click', () => {
         mobileMenu.classList.toggle('hidden');
       });
@@ -313,13 +399,8 @@
       });
 
       // Set initial active tab
-      if (tabLinks.length > 0) {
-        tabLinks[0].click();
-      }
-      
-      // Set current year in footer
-      document.getElementById('currentYear').textContent = new Date().getFullYear();
+      tabLinks[0].click();
     });
   </script>
 </body>
-</html> 
+</html>                                                                                                                                                      
