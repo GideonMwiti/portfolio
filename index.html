@@ -15,6 +15,24 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <!-- Tailwind CSS framework -->
   <script src="https://cdn.tailwindcss.com"></script>
+  
+<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
 </head>
 <body class="bg-gray-100">
   
@@ -26,8 +44,9 @@
     <div class="container mx-auto px-4 py-3 flex justify-between items-center">
       <!-- Brand Logo -->
       <div class="flex items-center">
-        <span class="text-xl font-bold text-blue-600">GIDEON-MWITI</span>
+        <img src="logo.png" alt="GIDEON-MWITI LOGO" class="h-16 w-auto">
       </div>
+      
       
       <!-- Desktop Navigation  -->
 <div class="hidden md:flex space-x-8">
@@ -47,42 +66,41 @@
     <i class="fas fa-envelope mr-2"></i> Contact
   </a>
 </div>
-  
-      <!-- Mobile Menu Toggle Button -->
-      <div class="md:hidden">
-        <button id="menuBtn" class="text-gray-600">
-          <i class="fas fa-bars text-2xl"></i>
-        </button>
-      </div>
-    </div>
-    
-    <!-- Mobile Navigation Menu (Hidden by default) -->
-    <div id="mobileMenu" class="mobile-menu md:hidden bg-white hidden">
-      <div class="px-4 py-2 space-y-4">
-        <a href="index.html" class="block text-gray-600 font-bold hover:text-blue-600 flex items-center">
-          <i class="fas fa-home mr-2"></i> Home
-        </a>
-        <a href="about.html" class="block text-gray-600 font-bold hover:text-blue-600 flex items-center">
-          <i class="fas fa-user mr-2"></i> About
-        </a>
-        <a href="services.html" class="block text-gray-600 font-bold hover:text-blue-600 flex items-center">
-          <i class="fas fa-cogs mr-2"></i> Services
-        </a>
-        <a href="portfolio.html" class="block text-gray-600 font-bold hover:text-blue-600 flex items-center">
-          <i class="fas fa-briefcase mr-2"></i> Portfolio
-        </a>
-        <a href="contact.html" class="block text-gray-600 font-bold hover:text-blue-600 flex items-center">
-          <i class="fas fa-envelope mr-2"></i> Contact
-        </a>
-      </div>
-    </div>
+   <!-- Mobile Menu Toggle -->
+   <div class="md:hidden">
+    <button id="menuBtn" class="text-gray-600">
+      <i class="fas fa-bars text-2xl"></i>
+    </button>
+  </div>
+</div>
+<!-- Mobile Menu -->
+<div id="mobileMenu" class="md:hidden bg-white hidden">
+  <div class="px-4 py-2 space-y-4">
+    <a href="index.html" class="block text-gray-600 font-bold hover:text-blue-600 flex items-center">
+      <i class="fas fa-home mr-2"></i> Home
+    </a>
+    <a href="about.html" class="block text-gray-600 font-bold hover:text-blue-600 flex items-center">
+      <i class="fas fa-user mr-2"></i> About
+    </a>
+    <a href="services.html" class="block text-gray-600 font-bold hover:text-blue-600 flex items-center">
+      <i class="fas fa-cogs mr-2"></i> Services
+    </a>
+    <a href="portfolio.html" class="block text-gray-600 font-bold hover:text-blue-600 flex items-center">
+      <i class="fas fa-briefcase mr-2"></i> Portfolio
+    </a>
+    <a href="contact.html" class="block text-gray-600 font-bold hover:text-blue-600 flex items-center">
+      <i class="fas fa-envelope mr-2"></i> Contact
+    </a>
+  </div>
+       
+  </div>
   </nav>
 
   <!-- =======================
        Hero Section
        Introduction area with a dynamic typing effect.
   ============================ -->
-  <section class="py-20">
+  <section class="py-24">
     <div class="max-w-6xl mx-auto px-4">
       <div class="text-center">
         <!-- Dynamic Typing Effect for Role Description -->
@@ -276,6 +294,10 @@
         <a href="https://facebook.com/techbros631" target="_blank" class="hover:text-blue-200 transition-colors">
           <i class="fab fa-facebook text-2xl"></i>
         </a>
+        <a href="https://www.instagram.com/gideonmwiti001" target="_blank" class="hover:text-blue-200 transition-colors">
+          <i class="fab fa-instagram text-2xl"></i>
+        </a>
+        
         <a href="https://x.com/techbros631" target="_blank" class="hover:text-blue-200 transition-colors">
           <i class="fab fa-twitter text-2xl"></i>
         </a>
@@ -287,6 +309,12 @@
         </a>
         <a href="https://github.com/GideonMwiti" target="_blank" class="hover:text-blue-200 transition-colors">
           <i class="fab fa-github text-2xl"></i>
+        </a>
+        <a href="mailto:mwitigideon002@gmail.com" class="hover:text-blue-200 transition-colors">
+          <i class="fas fa-envelope text-2xl"></i>
+        </a>
+        <a href="tel:+254798985389" class="hover:text-blue-200 transition-colors">
+          <i class="fas fa-phone text-2xl"></i>
         </a>
       </div>
       
@@ -309,22 +337,47 @@
     // Set the current year in the footer automatically
     document.getElementById('currentYear').textContent = new Date().getFullYear();
   </script>
-
-  <!-- Mobile Menu Toggle Script -->
-  <script>
-    // Toggle the mobile navigation menu on button click
-    const mobileMenuButton = document.getElementById('menuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    
-    mobileMenuButton.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-    
-    // Automatically close the mobile menu when a link is clicked
-    document.querySelectorAll('#mobileMenu a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
+   
+   <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Mobile menu toggle
+      const mobileMenuButton = document.getElementById('menuBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+      mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
       });
+      
+      // Tab functionality with active underline
+      const tabLinks = document.querySelectorAll('.tab-button');
+      const tabContents = document.querySelectorAll('.tab-content');
+      
+      tabLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          // Remove active styles from all tabs
+          tabLinks.forEach(item => {
+            item.classList.remove('text-blue-500', 'border-blue-500', 'border-b-4');
+            item.classList.add('border-b-2', 'border-transparent');
+          });
+          // Hide all tab contents
+          tabContents.forEach(content => content.classList.add('hidden'));
+          
+          // Apply active styles to the clicked tab
+          this.classList.remove('border-transparent');
+          this.classList.add('text-blue-500', 'border-blue-500', 'border-b-4');
+          
+          // Show the corresponding content
+          const tabId = this.getAttribute('data-tab');
+          document.getElementById(tabId).classList.remove('hidden');
+        });
+      });
+      
+      // Set the first tab as active on load
+      if (tabLinks.length > 0) {
+        tabLinks[0].click();
+      }
+      
+      // Set current year in footer
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
     });
   </script>
 
