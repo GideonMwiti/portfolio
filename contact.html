@@ -237,10 +237,7 @@
               Thank you for your message! I'll get back to you within 24 hours at <strong>ceo@sericsoft.com</strong>.
             </div>
 
-            <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
-              <input type="hidden" name="apikey" value="996fb565-90e3-46c5-88cd-aba3d12e89e2">
-              <input type="hidden" name="subject" value="New Inquiry via Portfolio – Gideon Mwiti (CEO, Sericsoft)">
-              <input type="hidden" name="redirect" value="">
+            <form id="contactForm" method="POST" novalidate>
 
               <div class="form-row" style="margin-bottom:16px;">
                 <div>
@@ -301,6 +298,7 @@
 
   <script>
     document.getElementById('currentYear').textContent = new Date().getFullYear();
+
     // Mobile menu
     const menuBtn = document.getElementById('menuBtn');
     const mobileMenu = document.getElementById('mobileMenu');
@@ -309,36 +307,60 @@
       menuBtn.querySelector('i').classList.toggle('fa-bars');
       menuBtn.querySelector('i').classList.toggle('fa-xmark');
     });
-    // Form submission
+
+    // Contact form — PHP backend
     const form = document.getElementById('contactForm');
-    const msg = document.getElementById('formMessage');
+    const msgBox = document.getElementById('formMessage');
     const submBtn = document.getElementById('submitBtn');
+
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       submBtn.disabled = true;
       submBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-      const data = new FormData(form);
+      msgBox.classList.remove('show', 'error-msg');
+
+      const payload = {
+        name: form.querySelector('#name').value.trim(),
+        email: form.querySelector('#email').value.trim(),
+        subject: form.querySelector('#subject').value.trim(),
+        message: form.querySelector('#message').value.trim()
+      };
+
       try {
-        const res = await fetch(form.action, {
-          method: 'POST', headers: { 'Accept': 'application/json' }, body: data
+        const res = await fetch('submit_contact.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(payload)
         });
-        if (res.ok) {
+        const json = await res.json();
+
+        if (json.success) {
           form.reset();
-          msg.classList.add('show');
+          msgBox.style.background = 'rgba(16,185,129,0.1)';
+          msgBox.style.borderColor = 'rgba(16,185,129,0.3)';
+          msgBox.style.color = '#10b981';
+          msgBox.innerHTML = '<i class="fas fa-check-circle" style="margin-right:8px;"></i>' + json.message;
+          msgBox.classList.add('show');
           submBtn.innerHTML = '<i class="fas fa-check"></i> Sent!';
         } else {
-          throw new Error('Failed');
+          throw new Error(json.error || 'Submission failed.');
         }
-      } catch {
-        alert('There was an error. Please email ceo@sericsoft.com directly.');
+      } catch (err) {
+        msgBox.style.background = 'rgba(239,68,68,0.1)';
+        msgBox.style.borderColor = 'rgba(239,68,68,0.3)';
+        msgBox.style.color = '#ef4444';
+        msgBox.innerHTML = '<i class="fas fa-exclamation-circle" style="margin-right:8px;"></i>' + (err.message || 'Something went wrong. Email us at ceo@sericsoft.com.');
+        msgBox.classList.add('show');
         submBtn.disabled = false;
         submBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
       }
     });
+
     // Auto-fill subject from URL param
     const urlParams = new URLSearchParams(window.location.search);
     const subjectParam = urlParams.get('subject');
-    if (subjectParam) document.getElementById('subject').value = subjectParam;
+    if (subjectParam) document.getElementById('subject').value = decodeURIComponent(subjectParam);
+
     // Scroll reveal
     const observer = new IntersectionObserver(entries => {
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
