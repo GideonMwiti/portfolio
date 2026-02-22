@@ -1,380 +1,491 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GIDEON-MWITI</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-  <script src="https://cdn.tailwindcss.com"></script>
-   <!-- =======================
-        Favicon links 
-  ============================ -->
-<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-<link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/manifest.json">
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-<meta name="theme-color" content="#ffffff">
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Gideon Mwiti – CEO & IT Project Manager</title>
+  <meta name="description"
+    content="Learn about Gideon Mwiti – CEO of Sericsoft Innovations Ltd, IT Project Manager, and BSc Project Planning & Management student at Kisii University.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#060b18">
+
+  <style>
+    .about-grid {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    @media (max-width: 860px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-profile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+    }
+
+    .profile-img-wrap {
+      position: relative;
+      display: inline-block;
+    }
+
+    .profile-img {
+      width: 100%;
+      max-width: 260px;
+      border-radius: 16px;
+      object-fit: cover;
+      border: 2px solid var(--border-accent);
+      box-shadow: 0 0 40px rgba(0, 212, 255, 0.12);
+    }
+
+    .profile-status {
+      position: absolute;
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      border-radius: 20px;
+      padding: 4px 14px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #10b981;
+      white-space: nowrap;
+      backdrop-filter: blur(8px);
+    }
+
+    .profile-info {
+      margin-top: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .profile-info-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.83rem;
+      color: var(--text-secondary);
+    }
+
+    .profile-info-item i {
+      width: 18px;
+      color: var(--accent-cyan);
+      text-align: center;
+    }
+
+    .profile-info-item strong {
+      color: var(--text-primary);
+    }
+  </style>
 </head>
-<body class="bg-gray-100">
-  <!-- Navigation -->
-  <nav class="fixed w-full bg-white shadow-lg z-50">
-    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-      <!-- Brand Logo -->
-      <div class="flex items-center">
-        <img src="logo.png" alt="GIDEON-MWITI LOGO" class="h-16 w-auto">
+
+<body>
+  <div class="bg-animated"></div>
+
+  <!-- NAV -->
+  <nav class="nav-glass" role="navigation" aria-label="Main Navigation">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo"><span class="logo-first">GIDEON</span><span
+          class="logo-last">MWITI</span></a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link-item"><i class="fas fa-home"></i> Home</a>
+        <a href="about.html" class="nav-link-item active"><i class="fas fa-user"></i> About</a>
+        <a href="services.html" class="nav-link-item"><i class="fas fa-cogs"></i> Services</a>
+        <a href="portfolio.html" class="nav-link-item"><i class="fas fa-briefcase"></i> Ecosystem</a>
+        <a href="contact.html" class="nav-link-item"><i class="fas fa-envelope"></i> Contact</a>
       </div>
-      <!-- Desktop Menu -->
-      <div class="hidden md:flex space-x-8">
-        <a href="index.html" class="nav-link text-gray-600 font-bold hover:text-blue-600 flex items-center relative border-b-2 border-transparent transition-colors duration-200">
-          <i class="fas fa-home mr-2"></i> Home
-        </a>
-        <a href="about.html" class="nav-link text-gray-600 font-bold hover:text-blue-600 flex items-center relative border-b-2 border-transparent transition-colors duration-200">
-          <i class="fas fa-user mr-2"></i> About
-        </a>
-        <a href="services.html" class="nav-link text-gray-600 font-bold hover:text-blue-600 flex items-center relative border-b-2 border-transparent transition-colors duration-200">
-          <i class="fas fa-cogs mr-2"></i> Services
-        </a>
-        <a href="portfolio.html" class="nav-link text-gray-600 font-bold hover:text-blue-600 flex items-center relative border-b-2 border-transparent transition-colors duration-200">
-          <i class="fas fa-briefcase mr-2"></i> Portfolio
-        </a>
-        <a href="contact.html" class="nav-link text-gray-600 font-bold hover:text-blue-600 flex items-center relative border-b-2 border-transparent transition-colors duration-200">
-          <i class="fas fa-envelope mr-2"></i> Contact
-        </a>
-      </div>
-      <!-- Mobile Menu Toggle -->
-      <div class="md:hidden">
-        <button id="menuBtn" class="text-gray-600">
-          <i class="fas fa-bars text-2xl"></i>
-        </button>
-      </div>
+      <button id="menuBtn" class="nav-mobile-btn" aria-label="Toggle menu"><i class="fas fa-bars"></i></button>
     </div>
-    <!-- Mobile Menu -->
-    <div id="mobileMenu" class="md:hidden bg-white hidden">
-      <div class="px-4 py-2 space-y-4">
-        <a href="index.html" class="block text-gray-600 font-bold hover:text-blue-600 flex items-center">
-          <i class="fas fa-home mr-2"></i> Home
-        </a>
-        <a href="about.html" class="block text-gray-600 font-bold hover:text-blue-600 flex items-center">
-          <i class="fas fa-user mr-2"></i> About
-        </a>
-        <a href="services.html" class="block text-gray-600 font-bold hover:text-blue-600 flex items-center">
-          <i class="fas fa-cogs mr-2"></i> Services
-        </a>
-        <a href="portfolio.html" class="block text-gray-600 font-bold hover:text-blue-600 flex items-center">
-          <i class="fas fa-briefcase mr-2"></i> Portfolio
-        </a>
-        <a href="contact.html" class="block text-gray-600 font-bold hover:text-blue-600 flex items-center">
-          <i class="fas fa-envelope mr-2"></i> Contact
-        </a>
-      </div>
+    <div id="mobileMenu" class="nav-mobile-menu">
+      <a href="index.html"><i class="fas fa-home"></i> Home</a>
+      <a href="about.html" class="active"><i class="fas fa-user"></i> About</a>
+      <a href="services.html"><i class="fas fa-cogs"></i> Services</a>
+      <a href="portfolio.html"><i class="fas fa-briefcase"></i> Ecosystem</a>
+      <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
     </div>
   </nav>
 
-  <!-- About Section -->
-  <section class="container mx-auto px-4 flex flex-col md:flex-row items-start py-12 pt-24 md:pt-32">
-    <!-- Profile Image -->
-    <div class="w-full md:w-1/3 flex justify-center mb-8 md:mb-0 px-2">
-      <img src="profile.jpg" alt="Profile" class="rounded-lg shadow-lg w-full max-w-[250px] md:max-w-xs">
-    </div>
-    <!-- Content -->
-    <div class="w-full md:w-2/3 md:pl-8 lg:pl-12 px-2">
-      <p class="mb-6 text-gray-700 text-[0.9rem] leading-[1.5] md:text-base">
-        I am an IT Project Manager with a passion for software development and a keen interest in AI &amp; ML innovations. With extensive experience managing both corporate and freelance projects, I leverage agile methodologies and digital transformation strategies to deliver cutting-edge IT solutions. 
-      </p>
+  <div class="page-wrapper">
+    <section class="section-pad">
+      <div class="container">
 
-      <!-- Tabs Navigation -->
-      <!-- On mobile: grid with 2 columns; on md+: flex row -->
-      <nav class="grid grid-cols-2 gap-2 md:flex md:space-x-2 font-bold border-b-2 pb-2 mb-6">
-        <button class="tab-button px-4 py-2 text-gray-500 hover:text-blue-500 transition-colors duration-200 border-b-2 border-transparent" data-tab="skills">
-          <i class="fas fa-code mr-2"></i> Skills
-        </button>
-        <button class="tab-button px-4 py-2 text-gray-500 hover:text-blue-500 transition-colors duration-200 border-b-2 border-transparent" data-tab="experience">
-          <i class="fas fa-briefcase mr-2"></i> Experience
-        </button>
-        <button class="tab-button px-4 py-2 text-gray-500 hover:text-blue-500 transition-colors duration-200 border-b-2 border-transparent" data-tab="education">
-          <i class="fas fa-graduation-cap mr-2"></i> Education
-        </button>
-        <button class="tab-button px-4 py-2 text-gray-500 hover:text-blue-500 transition-colors duration-200 border-b-2 border-transparent" data-tab="testimonial">
-          <i class="fas fa-comments mr-2"></i> Reviews
-        </button>
-      </nav>
+        <!-- Page Header -->
+        <div class="text-center mb-8 reveal">
+          <div class="section-label" style="justify-content:center;"><i class="fas fa-user-tie"></i> About Me</div>
+          <h1 class="section-title">IT Project Manager &<br><span class="text-gradient">SaaS Founder</span></h1>
+        </div>
 
-      <!-- Tabs Content -->
-      <div class="tab-container">
-        <!-- Skills Tab -->
-        <div id="skills" class="tab-content bg-white rounded-lg shadow-md p-6">
-          <h2 class="text-2xl font-semibold text-gray-800 mb-4">Skills</h2>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <h3 class="text-lg font-semibold text-gray-700 mb-2">Project Management</h3>
-              <ul class="list-disc pl-5 text-gray-600">
-                <li>Project Planning & Scheduling</li>
-                <li>Risk Management</li>
-                <li>Agile & Scrum Methodologies</li>
-                <li>Stakeholder Communication</li>
-                <li>Budget and Resource Allocation</li>
-              </ul>
+        <div class="about-grid reveal">
+          <!-- Left: Profile -->
+          <div class="about-profile">
+            <div class="profile-img-wrap">
+              <img src="ceo.jpeg" alt="Gideon Mwiti – CEO, Sericsoft Innovations Ltd" class="profile-img">
+              <div class="profile-status"><i class="fas fa-circle" style="font-size:6px;"></i> Available for
+                Opportunities</div>
             </div>
-            <div>
-              <h3 class="text-lg font-semibold text-gray-700 mb-2">AI & Machine Learning</h3>
-              <ul class="list-disc pl-5 text-gray-600">
-                <li>Data Analytics & AI</li>
-                <li>Machine Learning (TensorFlow, PyTorch)</li>
-                <li>Data Visualization (Pandas, Matplotlib)</li>
-              </ul>
+
+            <div class="profile-info" style="margin-top:40px;">
+              <div class="profile-info-item">
+                <i class="fas fa-building"></i>
+                <span><strong>CEO</strong> · Sericsoft Innovations Ltd</span>
+              </div>
+              <div class="profile-info-item">
+                <i class="fas fa-graduation-cap"></i>
+                <span>BSc Project Planning &amp; Management</span>
+              </div>
+              <div class="profile-info-item">
+                <i class="fas fa-university"></i>
+                <a href="https://kisiiuniversity.ac.ke/" target="_blank" style="color:var(--accent-cyan);">Kisii
+                  University</a>
+              </div>
+              <div class="profile-info-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Nairobi, Kenya</span>
+              </div>
+              <div class="profile-info-item">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:ceo@sericsoft.com" style="color:var(--accent-cyan);">ceo@sericsoft.com</a>
+              </div>
+              <div class="profile-info-item">
+                <i class="fas fa-phone"></i>
+                <a href="tel:+254798985389" style="color:var(--accent-cyan);">+254 798 985 389</a>
+              </div>
             </div>
-            <div>
-              <h3 class="text-lg font-semibold text-gray-700 mb-2">Software Development</h3>
-              <ul class="list-disc pl-5 text-gray-600">
-                <li>Programming Languages (Python, PHP, JavaScript, HTML, CSS)</li>
-                <li>Frameworks & Libraries (Django, Laravel, Node.js, React.js, React Native, Tailwind CSS)</li>
-                <li>Database (MySQL,SQL. Firestore)</li>
-                <li>USSD & SMS APIs (Africa's Talking, Twilio)</li>
-                <li>API Testing (Postman)</li>
-                <li>Version Control (Git, Github)</li>
-              </ul>
+
+            <div style="margin-top:24px; display:flex; gap:10px; flex-wrap:wrap; justify-content:center;">
+              <a href="contact.html" class="btn-primary" style="font-size:0.82rem;padding:9px 18px;"><i
+                  class="fas fa-paper-plane"></i> Hire Me</a>
+              <a href="https://drive.google.com/uc?export=download&id=1jQpGyiMIGBDpeULxfBtrfABDJtVzWdZv"
+                class="btn-outline" style="font-size:0.82rem;padding:8px 18px;"><i class="fas fa-download"></i> CV</a>
+            </div>
+          </div>
+
+          <!-- Right: Tabs -->
+          <div>
+            <div class="glass-card" style="padding:0;overflow:hidden;">
+              <!-- Bio Header -->
+              <div style="padding:24px 28px 0;">
+                <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.8;margin-bottom:20px;">
+                  I am an IT Project Manager and CEO of <strong style="color:var(--text-primary);">Sericsoft Innovations
+                    Ltd</strong>,
+                  a software company delivering enterprise-grade SaaS products across East Africa.
+                  With a foundation in <strong style="color:var(--text-primary);">IT Project Management &amp; Software
+                    Engineering</strong>,
+                  I leverage Agile, PMBOK governance frameworks, and modern full-stack development to build
+                  scalable, secure, and impactful technology solutions. Currently pursuing a BSc in
+                  <strong style="color:var(--text-primary);">Project Planning &amp; Management</strong> at Kisii
+                  University,
+                  I blend academic discipline with real-world entrepreneurship.
+                </p>
+
+                <!-- Tab Navigation -->
+                <div class="tab-nav" style="margin-bottom:0;">
+                  <button class="tab-btn active" data-tab="skills"><i class="fas fa-code"></i> Skills</button>
+                  <button class="tab-btn" data-tab="experience"><i class="fas fa-briefcase"></i> Experience</button>
+                  <button class="tab-btn" data-tab="education"><i class="fas fa-graduation-cap"></i> Education</button>
+                  <button class="tab-btn" data-tab="reviews"><i class="fas fa-comments"></i> Reviews</button>
+                </div>
+              </div>
+
+              <!-- Tab: Skills -->
+              <div id="skills" class="tab-content active" style="padding:24px 28px;">
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+                  <div class="skill-group">
+                    <h4><i class="fas fa-tasks" style="margin-right:6px;"></i>Project Management</h4>
+                    <ul>
+                      <li>Project Planning &amp; Scheduling</li>
+                      <li>Risk Management &amp; Mitigation</li>
+                      <li>Agile, Scrum &amp; PMBOK</li>
+                      <li>Stakeholder Communication</li>
+                      <li>Budget &amp; Resource Allocation</li>
+                    </ul>
+                  </div>
+                  <div class="skill-group">
+                    <h4><i class="fas fa-code" style="margin-right:6px;"></i>Software Engineering</h4>
+                    <ul>
+                      <li>PHP, JavaScript, Python, HTML/CSS</li>
+                      <li>Laravel, Node.js, React.js</li>
+                      <li>MySQL, SQL, Firestore</li>
+                      <li>USSD &amp; SMS APIs (Africa's Talking)</li>
+                      <li>Git, GitHub, Postman</li>
+                    </ul>
+                  </div>
+                  <div class="skill-group">
+                    <h4><i class="fas fa-robot" style="margin-right:6px;"></i>AI &amp; Data</h4>
+                    <ul>
+                      <li>Data Analytics &amp; AI Integration</li>
+                      <li>Machine Learning (TensorFlow)</li>
+                      <li>Data Visualization (Pandas, Matplotlib)</li>
+                    </ul>
+                  </div>
+                  <div class="skill-group">
+                    <h4><i class="fas fa-cloud" style="margin-right:6px;"></i>Cloud &amp; DevOps</h4>
+                    <ul>
+                      <li>cPanel &amp; Linux Server Management</li>
+                      <li>Netlify, Vercel, GitHub Pages</li>
+                      <li>API Design &amp; Integration</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tab: Experience -->
+              <div id="experience" class="tab-content" style="padding:24px 28px;">
+                <div class="timeline-entry">
+                  <div class="timeline-title">CEO &amp; Founder</div>
+                  <div class="timeline-sub">Sericsoft Innovations Ltd · 2024 – Present</div>
+                  <div class="timeline-desc">
+                    Leading strategy, product design, and engineering delivery of multi-tenant SaaS platforms and IoT
+                    solutions
+                    for clients across East Africa. Overseeing a 4-product ecosystem from ideation through maintenance.
+                  </div>
+                </div>
+                <div class="timeline-entry">
+                  <div class="timeline-title">Freelance IT Project Manager &amp; Developer</div>
+                  <div class="timeline-sub">Upwork / Fiverr · 2023 – Present</div>
+                  <div class="timeline-desc">
+                    Delivered 10+ projects including web applications, USSD systems, and AI-powered tools for
+                    international
+                    clients — maintaining 5-star ratings through professional communication and on-time delivery.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tab: Education -->
+              <div id="education" class="tab-content" style="padding:24px 28px;">
+                <!-- Degree -->
+                <div class="timeline-entry">
+                  <div class="timeline-title">BSc Project Planning &amp; Management</div>
+                  <div class="timeline-sub">
+                    <a href="https://kisiiuniversity.ac.ke/" target="_blank" style="color:var(--accent-cyan);">Kisii
+                      University</a> · 2023 – Present
+                  </div>
+                  <div class="timeline-desc">
+                    Specializing in IT Project Management &amp; Software Engineering. Applying PMBOK and Agile
+                    frameworks to real-world Sericsoft product delivery cycles.
+                  </div>
+                </div>
+
+                <!-- Certifications heading -->
+                <div style="margin:20px 0 14px; display:flex; align-items:center; gap:8px;">
+                  <span
+                    style="font-family:'Outfit',sans-serif;font-size:0.8rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent-cyan);">
+                    <i class="fas fa-certificate"></i> Professional Certifications
+                  </span>
+                </div>
+
+                <!-- Cert 1: AI Fundamentals -->
+                <div class="timeline-entry" style="border-left-color: rgba(99,102,241,0.5);">
+                  <div class="timeline-title">Artificial Intelligence Fundamentals with Capstone</div>
+                  <div class="timeline-sub">IBM SkillsBuild · 2025</div>
+                  <div class="timeline-desc">A deep dive into AI concepts including machine learning and neural
+                    networks, concluding with a practical capstone project.
+                    <br>
+                    <a href="https://www.credly.com/badges/e65c247d-b9f4-4850-b4bd-725e590e4395" target="_blank"
+                      style="color:var(--accent-cyan);font-weight:600;font-size:0.8rem;margin-top:6px;display:inline-flex;align-items:center;gap:4px;">
+                      <i class="fas fa-external-link-alt"></i> Verify on Credly
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Cert 2: Data Fundamentals -->
+                <div class="timeline-entry" style="border-left-color: rgba(99,102,241,0.5);">
+                  <div class="timeline-title">Data Fundamentals with Capstone</div>
+                  <div class="timeline-sub">IBM SkillsBuild · 2025</div>
+                  <div class="timeline-desc">Comprehensive mastery of data analysis, visualization, and interpretation
+                    techniques through a hands-on capstone project.
+                    <br>
+                    <a href="https://www.credly.com/badges/ad9fa629-30df-407f-a7c4-2d18adb4965d" target="_blank"
+                      style="color:var(--accent-cyan);font-weight:600;font-size:0.8rem;margin-top:6px;display:inline-flex;align-items:center;gap:4px;">
+                      <i class="fas fa-external-link-alt"></i> Verify on Credly
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Cert 3: Product Development -->
+                <div class="timeline-entry" style="border-left-color: rgba(139,92,246,0.5);">
+                  <div class="timeline-title">Master Product Development: From Idea to Market Success</div>
+                  <div class="timeline-sub">MTF Institute / Udemy · 2025</div>
+                  <div class="timeline-desc">Expertise in the end-to-end product development lifecycle, focusing on
+                    taking complex digital ideas to successful market launch.
+                    <br>
+                    <a href="https://ude.my/UC-a2431d41-0567-4e20-8562-d29de07da653" target="_blank"
+                      style="color:var(--accent-cyan);font-weight:600;font-size:0.8rem;margin-top:6px;display:inline-flex;align-items:center;gap:4px;">
+                      <i class="fas fa-external-link-alt"></i> Verify on Udemy
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Cert 4: Agile Scrum Master -->
+                <div class="timeline-entry" style="border-left-color: rgba(16,185,129,0.5);">
+                  <div class="timeline-title">Agile Scrum Master</div>
+                  <div class="timeline-sub">Simplilearn SkillUP · 2025</div>
+                  <div class="timeline-desc">Professional validation in Agile methodologies and the Scrum framework,
+                    essential for IT Project Management leadership.
+                    <br>
+                    <span style="color:var(--text-muted);font-size:0.8rem;margin-top:6px;display:inline-block;">
+                      <i class="fas fa-id-badge"></i> ID: 8472852
+                    </span>
+                  </div>
+                </div>
+
+                <!-- Cert 5: Cybersecurity -->
+                <div class="timeline-entry" style="border-left-color: rgba(99,102,241,0.5);">
+                  <div class="timeline-title">Cybersecurity Fundamentals</div>
+                  <div class="timeline-sub">IBM SkillsBuild · 2025</div>
+                  <div class="timeline-desc">Training on core cybersecurity principles, threat landscapes, and
+                    protective measures for enterprise-grade digital systems.
+                    <br>
+                    <a href="https://www.credly.com/badges/e65c247d-b9f4-4850-b4bd-725e590e4395" target="_blank"
+                      style="color:var(--accent-cyan);font-weight:600;font-size:0.8rem;margin-top:6px;display:inline-flex;align-items:center;gap:4px;">
+                      <i class="fas fa-external-link-alt"></i> Verify on Credly
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Cert 6: Business Analysis -->
+                <div class="timeline-entry" style="border-left-color: rgba(16,185,129,0.5);">
+                  <div class="timeline-title">Business Analysis Basics</div>
+                  <div class="timeline-sub">Simplilearn SkillUP · 2025</div>
+                  <div class="timeline-desc">Foundational knowledge in business analysis processes, requirements
+                    gathering, and strategic stakeholder management.
+                    <br>
+                    <span style="color:var(--text-muted);font-size:0.8rem;margin-top:6px;display:inline-block;">
+                      <i class="fas fa-id-badge"></i> ID: 8432529
+                    </span>
+                  </div>
+                </div>
+
+                <!-- Cert 7: Tech Talent Prework -->
+                <div class="timeline-entry" style="border-left-color: rgba(99,102,241,0.5);">
+                  <div class="timeline-title">Tech Talent Prework Learning</div>
+                  <div class="timeline-sub">IBM SkillsBuild · 2025</div>
+                  <div class="timeline-desc">Initial technical training focused on developing core skills required for
+                    the modern tech workforce.
+                    <br>
+                    <span style="color:var(--text-muted);font-size:0.8rem;margin-top:6px;display:inline-block;">
+                      <i class="fas fa-id-badge"></i> Record: PLAN-AF3DCCF0FA02
+                    </span>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Tab: Reviews -->
+              <div id="reviews" class="tab-content" style="padding:24px 28px;">
+                <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;">
+                  <!-- Review 1: Joan Batila -->
+                  <div class="glass-card review-card">
+                    <img src="Joan.jpg" alt="Joan Batila" class="review-avatar">
+                    <div class="review-stars">
+                      <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                        class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"Gideon built a stunning, professional website for our healthtech startup.
+                      His attention to detail and understanding of our vision was remarkable."</p>
+                    <div class="review-name">Joan Batila</div>
+                    <div class="review-role">Project Manager, CEO &amp; Founder <a
+                        href="https://www.diagnosyshealth.com" target="_blank"
+                        style="color:var(--accent-cyan);font-size:0.75rem;">diagnosyshealth.com</a></div>
+                  </div>
+                  <!-- Review 2: Teresa Abuya -->
+                  <div class="glass-card review-card">
+                    <img src="terry.png" alt="Teresa Abuya" class="review-avatar">
+                    <div class="review-stars">
+                      <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                        class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"Great communication and technical expertise. Highly recommended!"</p>
+                    <div class="review-name">Teresa Abuya</div>
+                    <div class="review-role">Lecturer · Kisii University</div>
+                  </div>
+                  <!-- Review 3: Ezekiel Ochieng -->
+                  <div class="glass-card review-card">
+                    <img src="cto.jpeg" alt="Ezekiel Ochieng" class="review-avatar">
+                    <div class="review-stars">
+                      <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                        class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"Working alongside Gideon has been an exceptional experience. His technical
+                      leadership, vision, and execution drive are what make Sericsoft what it is."</p>
+                    <div class="review-name">Ezekiel Ochieng</div>
+                    <div class="review-role">CTO &amp; Co-Founder · Sericsoft Innovations Ltd</div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- Experience Tab -->
-        <div id="experience" class="tab-content hidden bg-white rounded-lg shadow-md p-6">
-          <h2 class="text-2xl font-semibold text-gray-800 mb-4">Experience</h2>
-          <div class="space-y-4">
-            <div class="border-l-4 border-blue-500 pl-4">
-              <h3 class="text-lg font-semibold">Freelancer (2023 - Present)</h3>
-              <p class="text-gray-600">
-                Worked with clients on 
-                <a href="https://www.upwork.com" target="_blank" class="text-blue-500 font-medium hover:underline">Upwork</a>
-                and 
-                <a href="https://www.fiverr.com" target="_blank" class="text-blue-500 font-medium hover:underline">Fiverr</a>,
-                developing innovative software solutions by leveraging AI & Machine Learning.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Education Tab -->
-        <div id="education" class="tab-content hidden bg-white rounded-lg shadow-md p-6">
-          <h2 class="text-2xl font-semibold text-gray-800 mb-4">Education</h2>
-          <div class="border-l-4 border-green-500 pl-4">
-            <h3 class="text-lg font-semibold">BSc in Project Planning & Management</h3>
-            <p class="text-gray-600">
-              <a href="https://kisiiuniversity.ac.ke/" target="_blank" class="text-blue-500 font-medium hover:underline">
-                Kisii University
-              </a> (2023 - Present)
-            </p>
-          </div>
-        <!-- Certification Section -->
-<div class="border-l-4 border-purple-500 pl-4 mt-8">
-  <h3 class="text-xl font-semibold text-gray-800 mb-1">IBM Certification</h3>
-  <p class="text-gray-600 mb-4">Completed an IBM course and earned a professional certificate.</p>
-  <div class="flex justify-center">
-    <div 
-      data-iframe-width="150" 
-      data-iframe-height="270" 
-      data-share-badge-id="f4e4a784-a228-41e0-b029-020566d48452" 
-      data-share-badge-host="https://www.credly.com">
-    </div>
+      </div>
+    </section>
   </div>
-  <div class="mt-4 flex justify-center">
-    <a href="https://www.credly.com/badges/f4e4a784-a228-41e0-b029-020566d48452/public_url" 
-    target="_blank" 
-    class="bg-blue-500 text-white border border-blue-500 font-bold py-2 px-4 rounded transition-colors duration-200 hover:bg-transparent hover:text-blue-500">
-   Verify 
- </a>
-  </div>
-</div>
-</div>
-<!-- Reviews Tab -->
-        <div id="testimonial" class="tab-content hidden bg-white rounded-lg shadow-md p-6">
-          <h2 class="text-2xl font-semibold text-gray-800 mb-4">Reviews</h2>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="border rounded-lg p-4 shadow text-center">
-              <div class="flex justify-center mb-2">
-                <img src="griffine.jpg" alt="Griffine Ombogo" class="w-16 h-16 rounded-full">
-              </div>
-              <div class="flex justify-center mb-2">
-                <i class="fas fa-star text-yellow-400"></i>
-                <i class="fas fa-star text-yellow-400"></i>
-                <i class="fas fa-star text-yellow-400"></i>
-                <i class="fas fa-star text-yellow-400"></i>
-                <i class="fas fa-star text-yellow-400"></i>
-              </div>
-              <p class="mb-2 text-gray-700">
-                I had the pleasure of working with Gideon on the AfyaAxis project. He delivered an outstanding USSD solution and consistently demonstrated exceptional professionalism throughout our collaboration.
-              </p>
-              <p class="font-semibold">Griffine Ombogo</p>
-              <p class="text-gray-600">Software Engineer</p>
-              <p>
-                <a href="https://slytexsoftwares.vercel.app" target="_blank" class="text-blue-500 font-medium hover:underline">
-                  Slytex Softwares
-                </a>
-              </p>
-              <a href="https://griffolab.netlify.app/" target="_blank" class="text-blue-500 font-medium hover:underline">
-                View Profile
-              </a>
-            </div>
-            <div class="border rounded-lg p-4 shadow text-center">
-              <div class="flex justify-center mb-2">
-                <img src="terry.png" alt="Teresa Abuya" class="w-16 h-16 rounded-full">
-              </div>
-              <div class="flex justify-center mb-2">
-                <i class="fas fa-star text-yellow-400"></i>
-                <i class="fas fa-star text-yellow-400"></i>
-                <i class="fas fa-star text-yellow-400"></i>
-                <i class="fas fa-star text-yellow-400"></i>
-                <i class="fas fa-star text-yellow-400"></i>
-              </div>
-              <p class="mb-2 text-gray-700">
-                "Great communication and technical expertise. Highly recommended!"
-              </p>
-              <p class="font-semibold">Teresa Abuya</p>
-              <p class="text-gray-600">Lecturer</p>
-              <p>
-                <a href="https://kisiiuniversity.ac.ke/" target="_blank" class="text-blue-500 font-medium hover:underline">
-                  Kisii University
-                </a>
-              </p>
-              <a href="https://www.linkedin.com/in/teresa-abuya-b55aa532/" target="_blank" class="text-blue-500 font-medium hover:underline">
-                View Profile
-              </a>
-            </div>
-            <div class="border rounded-lg p-4 shadow text-center">
-              <div class="flex justify-center mb-2">
-                <img src="irene.jpg" alt="Irene Mutheu" class="w-16 h-16 rounded-full">
-              </div>
-              <div class="flex justify-center mb-2">
-                <i class="fas fa-star text-yellow-400"></i>
-                <i class="fas fa-star text-yellow-400"></i>
-                <i class="fas fa-star text-yellow-400"></i>
-                <i class="fas fa-star text-yellow-400"></i>
-                <i class="fas fa-star text-yellow-400"></i>
-              </div>
-              <p class="mb-2 text-gray-700">
-                "Gideon created a stunning portfolio that highlights my career perfectly. His professionalism and attention to detail were exceptional."
-              </p>
-              <p class="font-semibold">Irene Mutheu</p>
-              <p class="text-gray-600">Model & Actress</p>
-              <p>Freelance Model</p>
-              <a href="https://irenemutheu.netlify.app" target="_blank" class="text-blue-500 font-medium hover:underline">
-                View Profile
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Footer -->
-  <footer class="bg-gray-800 text-white py-8 mt-16">
-    <div class="max-w-6xl mx-auto px-4">
-      <div class="flex justify-center space-x-6 mb-8">
-        <a href="https://facebook.com/techbros631" target="_blank" class="hover:text-blue-200 transition-colors">
-          <i class="fab fa-facebook text-2xl"></i>
-        </a>
-        <a href="https://www.instagram.com/gideonmwiti001" target="_blank" class="hover:text-blue-200 transition-colors">
-          <i class="fab fa-instagram text-2xl"></i>
-        </a>
-        <a href="https://x.com/techbros631" target="_blank" class="hover:text-blue-200 transition-colors">
-          <i class="fab fa-twitter text-2xl"></i>
-        </a>
-        <a href="https://wa.me/254798985389?text=Hello%20I%27m%20interested%20in%20your%20services" target="_blank" class="hover:text-blue-200 transition-colors">
-          <i class="fab fa-whatsapp text-2xl"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/mwitigideon/" target="_blank" class="hover:text-blue-200 transition-colors">
-          <i class="fab fa-linkedin text-2xl"></i>
-        </a>
-        <a href="https://github.com/GideonMwiti" target="_blank" class="hover:text-blue-200 transition-colors">
-          <i class="fab fa-github text-2xl"></i>
-        </a>
-        <a href="mailto:mwitigideon002@gmail.com" class="hover:text-blue-200 transition-colors">
-          <i class="fas fa-envelope text-2xl"></i>
-        </a>
-        <a href="tel:+254798985389" class="hover:text-blue-200 transition-colors">
-          <i class="fas fa-phone text-2xl"></i>
-        </a>
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-social">
+        <a href="https://facebook.com/techbros631" target="_blank" aria-label="Facebook"><i
+            class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/gideonmwiti001" target="_blank" aria-label="Instagram"><i
+            class="fab fa-instagram"></i></a>
+        <a href="https://x.com/techbros631" target="_blank" aria-label="X / Twitter"><i
+            class="fab fa-x-twitter"></i></a>
+        <a href="https://wa.me/254798985389?text=Hello%20I%27m%20interested%20in%20your%20services" target="_blank"
+          aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://github.com/GideonMwiti" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="mailto:ceo@sericsoft.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        <a href="tel:+254798985389" aria-label="Phone"><i class="fas fa-phone"></i></a>
       </div>
-      <div class="border-t border-blue-400 pt-6 text-center">
-        <p class="text-blue-100">&copy; <span id="currentYear"></span> GIDEON-MWITI. All rights reserved.</p>
-      </div>
+      <hr class="footer-divider">
+      <p class="footer-copy">&copy; <span id="currentYear"></span> <span>Gideon Mwiti</span> · CEO, <a
+          href="https://www.sericsoft.com" target="_blank" rel="noopener"
+          style="color:var(--accent-cyan);text-decoration:none;">Sericsoft Innovations Ltd</a>. All rights reserved.</p>
     </div>
   </footer>
 
-  <!-- JavaScript -->
-  <script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Mobile menu toggle
-      const mobileMenuButton = document.getElementById('menuBtn');
-      const mobileMenu = document.getElementById('mobileMenu');
-      mobileMenuButton.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-      });
-      
-      // Tab functionality with active underline
-      const tabLinks = document.querySelectorAll('.tab-button');
-      const tabContents = document.querySelectorAll('.tab-content');
-      
-      tabLinks.forEach(link => {
-        link.addEventListener('click', function() {
-          // Remove active styles from all tabs
-          tabLinks.forEach(item => {
-            item.classList.remove('text-blue-500', 'border-blue-500', 'border-b-4');
-            item.classList.add('border-b-2', 'border-transparent');
-          });
-          // Hide all tab contents
-          tabContents.forEach(content => content.classList.add('hidden'));
-          
-          // Apply active styles to the clicked tab
-          this.classList.remove('border-transparent');
-          this.classList.add('text-blue-500', 'border-blue-500', 'border-b-4');
-          
-          // Show the corresponding content
-          const tabId = this.getAttribute('data-tab');
-          document.getElementById(tabId).classList.remove('hidden');
-        });
-      });
-      
-      // Set the first tab as active on load
-      if (tabLinks.length > 0) {
-        tabLinks[0].click();
-      }
-      
-      // Set current year in footer
-      document.getElementById('currentYear').textContent = new Date().getFullYear();
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+      menuBtn.querySelector('i').classList.toggle('fa-bars');
+      menuBtn.querySelector('i').classList.toggle('fa-xmark');
     });
-  </script>
-<script>
-  // Highlight active navigation link
-  document.addEventListener('DOMContentLoaded', function() {
-      const navLinks = document.querySelectorAll('.nav-link');
-      const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-  
-      navLinks.forEach(link => {
-          const linkPage = link.getAttribute('href');
-          
-          // Add active styles if URLs match
-          if (linkPage === currentPage) {
-              link.classList.add('text-blue-600', 'border-blue-600');
-              link.classList.remove('text-gray-600', 'border-transparent');
-          }
+    // Tabs
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabBtns.forEach(b => b.classList.remove('active'));
+        tabContents.forEach(c => c.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById(btn.dataset.tab).classList.add('active');
       });
-  });
+    });
+    // Scroll reveal
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   </script>
+  <script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
 </body>
+
 </html>

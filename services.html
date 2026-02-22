@@ -1,263 +1,270 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GIDEON-MWITI</title>
-  <!-- Tailwind CSS CDN for styling -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Font Awesome CDN for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <!-- =======================
-        Favicon links 
-  ============================ -->
-<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-<link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/manifest.json">
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-<meta name="theme-color" content="#ffffff">
-
+  <title>Services | Gideon Mwiti – IT Project Management & Software Engineering</title>
+  <meta name="description"
+    content="IT Project Management, Software Engineering, SaaS Development, AI Integration, USSD Development, and more – services by Gideon Mwiti & Sericsoft Innovations Ltd.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#060b18">
 </head>
-<body class="bg-gray-100">
-  
-  <!-- ========== Navigation Section ========== -->
-  <nav class="fixed w-full bg-white shadow-lg z-50">
-    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-      <!-- Brand Logo -->
-      <div class="flex items-center">
-        <img src="logo.png" alt="GIDEON-MWITI LOGO" class="h-16 w-auto">
+
+<body>
+  <div class="bg-animated"></div>
+
+  <!-- NAV -->
+  <nav class="nav-glass" role="navigation" aria-label="Main Navigation">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo"><span class="logo-first">GIDEON</span><span
+          class="logo-last">MWITI</span></a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link-item"><i class="fas fa-home"></i> Home</a>
+        <a href="about.html" class="nav-link-item"><i class="fas fa-user"></i> About</a>
+        <a href="services.html" class="nav-link-item active"><i class="fas fa-cogs"></i> Services</a>
+        <a href="portfolio.html" class="nav-link-item"><i class="fas fa-briefcase"></i> Ecosystem</a>
+        <a href="contact.html" class="nav-link-item"><i class="fas fa-envelope"></i> Contact</a>
       </div>
-     <!--  Desktop Navigation  -->
-<div class="hidden md:flex space-x-8">
-  <a href="index.html" class="nav-link text-gray-600 font-bold hover:text-blue-600 flex items-center relative border-b-2 border-transparent transition-colors duration-200">
-    <i class="fas fa-home mr-2"></i> Home
-  </a>
-  <a href="about.html" class="nav-link text-gray-600 font-bold hover:text-blue-600 flex items-center relative border-b-2 border-transparent transition-colors duration-200">
-    <i class="fas fa-user mr-2"></i> About
-  </a>
-  <a href="services.html" class="nav-link text-gray-600 font-bold hover:text-blue-600 flex items-center relative border-b-2 border-transparent transition-colors duration-200">
-    <i class="fas fa-cogs mr-2"></i> Services
-  </a>
-  <a href="portfolio.html" class="nav-link text-gray-600 font-bold hover:text-blue-600 flex items-center relative border-b-2 border-transparent transition-colors duration-200">
-    <i class="fas fa-briefcase mr-2"></i> Portfolio
-  </a>
-  <a href="contact.html" class="nav-link text-gray-600 font-bold hover:text-blue-600 flex items-center relative border-b-2 border-transparent transition-colors duration-200">
-    <i class="fas fa-envelope mr-2"></i> Contact
-  </a>
-</div>
-      <!-- Mobile Menu Toggle Button -->
-      <div class="md:hidden">
-        <button id="menuBtn" class="text-gray-600">
-          <i class="fas fa-bars text-2xl"></i>
-        </button>
-      </div>
+      <button id="menuBtn" class="nav-mobile-btn" aria-label="Toggle menu"><i class="fas fa-bars"></i></button>
     </div>
-    
-    <!-- Mobile Navigation Menu (hidden by default) -->
-    <div id="mobileMenu" class="mobile-menu md:hidden bg-white hidden">
-      <div class="px-4 py-2 space-y-4">
-        <!-- Mobile Navigation Links -->
-        <a href="index.html" class="block text-gray-600 font-bold hover:text-blue-600 flex items-center">
-          <i class="fas fa-home mr-2"></i> Home
-        </a>
-        <a href="about.html" class="block text-gray-600 font-bold hover:text-blue-600 flex items-center">
-          <i class="fas fa-user mr-2"></i> About
-        </a>
-        <a href="services.html" class="block text-gray-600 font-bold hover:text-blue-600 flex items-center">
-          <i class="fas fa-cogs mr-2"></i> Services
-        </a>
-        <a href="portfolio.html" class="block text-gray-600 font-bold hover:text-blue-600 flex items-center">
-          <i class="fas fa-briefcase mr-2"></i> Portfolio
-        </a>
-        <a href="contact.html" class="block text-gray-600 font-bold hover:text-blue-600 flex items-center">
-          <i class="fas fa-envelope mr-2"></i> Contact
-        </a>
-      </div>
+    <div id="mobileMenu" class="nav-mobile-menu">
+      <a href="index.html"><i class="fas fa-home"></i> Home</a>
+      <a href="about.html"><i class="fas fa-user"></i> About</a>
+      <a href="services.html" class="active"><i class="fas fa-cogs"></i> Services</a>
+      <a href="portfolio.html"><i class="fas fa-briefcase"></i> Ecosystem</a>
+      <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
     </div>
   </nav>
-  
-  <!-- ========== Services Section ========== -->
-  <section class="py-24 bg-gray-50">
-    <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-12">What I do</h2>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        
-        <!-- Service Card: IT Project Management -->
-        <div class="bg-white p-6 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:shadow-lg">
-          <h3 class="text-xl font-bold mb-4">IT Project Management</h3>
-          <p class="text-gray-600">End-to-end IT project Management using Agile and traditional methodologies to ensure efficiency and timely delivery.</p>
-          <a href="contact.html?subject=IT%20Project%20Management" class="block mt-4 font-bold text-blue-600 hover:underline">REQUEST QUOTATION</a>
-        </div>
-        
-        <!-- Service Card: Product Development -->
-        <div class="bg-white p-6 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:shadow-lg">
-          <h3 class="text-xl font-bold mb-4">Product Development</h3>
-          <p class="text-gray-600">Transforming ideas into scalable and market-ready digital products through strategic planning and execution.</p>
-          <a href="contact.html?subject=Product%20Development" class="block mt-4 font-bold text-blue-600 hover:underline">REQUEST QUOTATION</a>
-        </div>
-        
-        <!-- Service Card: Technical Project Coordination -->
-        <div class="bg-white p-6 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:shadow-lg">
-          <h3 class="text-xl font-bold mb-4">Technical Project Coordination</h3>
-          <p class="text-gray-600">Overseeing technical teams, ensuring seamless collaboration, and driving projects to successful completion.</p>
-          <a href="contact.html?subject=Technical%20Project%20Coordination" class="block mt-4 font-bold text-blue-600 hover:underline">REQUEST QUOTATION</a>
-        </div>
-        
-        <!-- Service Card: AI Chatbot Development -->
-        <div class="bg-white p-6 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:shadow-lg">
-          <h3 class="text-xl font-bold mb-4">AI Chatbot Development</h3>
-          <p class="text-gray-600">Creating intelligent chatbots for customer engagement, automation, and personalized user experiences.</p>
-          <a href="contact.html?subject=AI%20Chatbot%20Development" class="block mt-4 font-bold text-blue-600 hover:underline">REQUEST QUOTATION</a>
-        </div>
-        
-        <!-- Service Card: Machine Learning Model Development -->
-        <div class="bg-white p-6 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:shadow-lg">
-          <h3 class="text-xl font-bold mb-4">Machine Learning Model Development</h3>
-          <p class="text-gray-600">Building and deploying machine learning models to enable predictive analytics, automation, and AI-driven insights.</p>
-          <a href="contact.html?subject=Machine%20Learning%20Model%20Development" class="block mt-4 font-bold text-blue-600 hover:underline">REQUEST QUOTATION</a>
-        </div>
-        
-        <!-- Service Card: Predictive Analytics & Data Science -->
-        <div class="bg-white p-6 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:shadow-lg">
-          <h3 class="text-xl font-bold mb-4">Predictive Analytics & Data Science</h3>
-          <p class="text-gray-600">Leveraging data science and AI to predict trends, optimize decision-making, and enhance business strategies.</p>
-          <a href="contact.html?subject=Predictive%20Analytics%20%26%20Data%20Science" class="block mt-4 font-bold text-blue-600 hover:underline">REQUEST QUOTATION</a>
-        </div>
-        
-        <!-- Service Card: Web Development -->
-        <div class="bg-white p-6 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:shadow-lg">
-          <h3 class="text-xl font-bold mb-4">Web Development</h3>
-          <p class="text-gray-600">Designing and developing responsive, high-performance websites with modern frameworks and technologies.</p>
-          <a href="contact.html?subject=Web%20Development" class="block mt-4 font-bold text-blue-600 hover:underline">REQUEST QUOTATION</a>
-        </div>
-        
-        <!-- Service Card: Mobile App Development -->
-        <div class="bg-white p-6 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:shadow-lg">
-          <h3 class="text-xl font-bold mb-4">Mobile App Development</h3>
-          <p class="text-gray-600">Developing scalable and user-friendly Android and iOS applications tailored to business needs.</p>
-          <a href="contact.html?subject=Mobile%20App%20Development" class="block mt-4 font-bold text-blue-600 hover:underline">REQUEST QUOTATION</a>
-        </div>
-        
-        <!-- Service Card: USSD Development -->
-        <div class="bg-white p-6 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:shadow-lg">
-          <h3 class="text-xl font-bold mb-4">USSD Development</h3>
-          <p class="text-gray-600">Creating interactive USSD applications for businesses, ensuring accessibility for feature phone users.</p>
-          <a href="contact.html?subject=USSD%20Development" class="block mt-4 font-bold text-blue-600 hover:underline">REQUEST QUOTATION</a>
-        </div>
-        
-        <!-- Service Card: API Development & Optimization -->
-        <div class="bg-white p-6 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:shadow-lg">
-          <h3 class="text-xl font-bold mb-4">API Development & Optimization</h3>
-          <p class="text-gray-600">Building and optimizing APIs for seamless integration between applications and third-party services.</p>
-          <a href="contact.html?subject=API%20Development%20%26%20Optimization" class="block mt-4 font-bold text-blue-600 hover:underline">REQUEST QUOTATION</a>
-        </div>
-        
-        <!-- Service Card: Custom Software Solutions -->
-        <div class="bg-white p-6 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:shadow-lg">
-          <h3 class="text-xl font-bold mb-4">Custom Software Solutions</h3>
-          <p class="text-gray-600">Developing tailored software solutions to meet specific business requirements and improve operational efficiency.</p>
-          <a href="contact.html?subject=Custom%20Software%20Solutions" class="block mt-4 font-bold text-blue-600 hover:underline">REQUEST QUOTATION</a>
-        </div>
-        
-      </div>
-    </div>
-  </section>
-  
-  <!-- ========== Footer Section ========== -->
-  <footer class="bg-gray-800 text-white py-8 mt-16">
-    <div class="max-w-6xl mx-auto px-4">
-      <!-- Social Media Links -->
-      <div class="flex justify-center space-x-6 mb-8">
-        <a href="https://facebook.com/techbros631" target="_blank" class="hover:text-blue-200 transition-colors">
-          <i class="fab fa-facebook text-2xl"></i>
-        </a>
-        <a href="https://www.instagram.com/gideonmwiti001" target="_blank" class="hover:text-blue-200 transition-colors">
-          <i class="fab fa-instagram text-2xl"></i>
-        </a>
-        <a href="https://x.com/techbros631" target="_blank" class="hover:text-blue-200 transition-colors">
-          <i class="fab fa-twitter text-2xl"></i>
-        </a>
-        <a href="https://wa.me/254798985389?text=Hello%20I%27m%20interested%20in%20your%20services" target="_blank" class="hover:text-blue-200 transition-colors">
-          <i class="fab fa-whatsapp text-2xl"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/mwitigideon/" target="_blank" class="hover:text-blue-200 transition-colors">
-          <i class="fab fa-linkedin text-2xl"></i>
-        </a>
-        <a href="https://github.com/GideonMwiti" target="_blank" class="hover:text-blue-200 transition-colors">
-          <i class="fab fa-github text-2xl"></i>
-        </a>
-        <a href="mailto:mwitigideon002@gmail.com" class="hover:text-blue-200 transition-colors">
-          <i class="fas fa-envelope text-2xl"></i>
-        </a>
-        <a href="tel:+254798985389" class="hover:text-blue-200 transition-colors">
-          <i class="fas fa-phone text-2xl"></i>
-        </a>
-      </div>
-      <!-- Copyright Notice -->
-      <div class="border-t border-blue-400 pt-6 text-center">
-        <p class="text-blue-100">
-          &copy; <span id="currentYear"></span> GIDEON-MWITI. All rights reserved.
+
+  <div class="page-wrapper">
+
+    <!-- ===== HEADER ===== -->
+    <section class="section-pad-sm" style="padding-top:60px;">
+      <div class="container text-center reveal">
+        <div class="section-label" style="justify-content:center;"><i class="fas fa-cogs"></i> What I Offer</div>
+        <h1 class="section-title">IT Project Management &amp;<br><span class="text-gradient">Software Engineering
+            Services</span></h1>
+        <p class="section-desc" style="margin:0 auto;">
+          From end-to-end project governance to full-stack SaaS development
+          Sericsoft Innovations delivers solutions engineered for scale and governed for success.
         </p>
       </div>
+    </section>
+
+    <!-- ===== SERVICES GRID ===== -->
+    <section class="section-pad">
+      <div class="container">
+        <div class="grid-3 reveal">
+
+          <!-- 1. IT Project Management -->
+          <div class="glass-card service-card">
+            <div class="service-icon"><i class="fas fa-tasks"></i></div>
+            <div class="service-title">IT Project Management</div>
+            <p class="service-desc">
+              End-to-end project governance using Agile, Scrum, and PMBOK frameworks.
+              From charter to closure ensuring timely delivery, risk control, and stakeholder alignment.
+            </p>
+            <a href="contact.html?subject=IT%20Project%20Management" class="project-link">Request Quotation <i
+                class="fas fa-arrow-right"></i></a>
+          </div>
+
+          <!-- 2. SaaS Product Development -->
+          <div class="glass-card service-card">
+            <div class="service-icon"><i class="fas fa-cloud"></i></div>
+            <div class="service-title">SaaS Product Development</div>
+            <p class="service-desc">
+              Multi-tenant SaaS platforms built with PHP, MySQL, and JavaScript.
+              Architected for isolation, scalability, and revenue-ready subscription models.
+            </p>
+            <a href="contact.html?subject=SaaS%20Product%20Development" class="project-link">Request Quotation <i
+                class="fas fa-arrow-right"></i></a>
+          </div>
+
+          <!-- 3. Software Engineering -->
+          <div class="glass-card service-card">
+            <div class="service-icon"><i class="fas fa-code"></i></div>
+            <div class="service-title">Software Engineering</div>
+            <p class="service-desc">
+              Full-stack web application development from requirements analysis through deployment.
+              Specializing in PHP/Laravel, MySQL, JavaScript, and REST APIs.
+            </p>
+            <a href="contact.html?subject=Software%20Engineering" class="project-link">Request Quotation <i
+                class="fas fa-arrow-right"></i></a>
+          </div>
+
+          <!-- 4. Technical Project Coordination -->
+          <div class="glass-card service-card">
+            <div class="service-icon"><i class="fas fa-sitemap"></i></div>
+            <div class="service-title">Technical Project Coordination</div>
+            <p class="service-desc">
+              Overseeing distributed technical teams, aligning engineering sprints with business objectives,
+              and driving cross-functional projects to successful delivery.
+            </p>
+            <a href="contact.html?subject=Technical%20Project%20Coordination" class="project-link">Request Quotation <i
+                class="fas fa-arrow-right"></i></a>
+          </div>
+
+          <!-- 5. USSD & Mobile Development -->
+          <div class="glass-card service-card">
+            <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
+            <div class="service-title">USSD &amp; Mobile Development</div>
+            <p class="service-desc">
+              Building interactive USSD applications via Africa's Talking and Twilio APIs
+              enabling feature phone accessibility for financial, health, and agricultural services.
+            </p>
+            <a href="contact.html?subject=USSD%20and%20Mobile%20Development" class="project-link">Request Quotation <i
+                class="fas fa-arrow-right"></i></a>
+          </div>
+
+          <!-- 6. AI & Digital Transformation -->
+          <div class="glass-card service-card">
+            <div class="service-icon"><i class="fas fa-robot"></i></div>
+            <div class="service-title">AI &amp; Digital Transformation</div>
+            <p class="service-desc">
+              Integrating machine learning models, AI chatbots, and predictive analytics
+              into existing business workflows to drive intelligent automation and data-driven decisions.
+            </p>
+            <a href="contact.html?subject=AI%20and%20Digital%20Transformation" class="project-link">Request Quotation <i
+                class="fas fa-arrow-right"></i></a>
+          </div>
+
+          <!-- 7. API Development & Integration -->
+          <div class="glass-card service-card">
+            <div class="service-icon"><i class="fas fa-plug"></i></div>
+            <div class="service-title">API Development &amp; Integration</div>
+            <p class="service-desc">
+              Designing and securing RESTful APIs; integrating third-party services including
+              payment gateways, SMS providers, and government data APIs.
+            </p>
+            <a href="contact.html?subject=API%20Development" class="project-link">Request Quotation <i
+                class="fas fa-arrow-right"></i></a>
+          </div>
+
+          <!-- 8. Web Development -->
+          <div class="glass-card service-card">
+            <div class="service-icon"><i class="fas fa-globe"></i></div>
+            <div class="service-title">Web Development</div>
+            <p class="service-desc">
+              Responsive, high-performance websites and portals using modern HTML5/CSS3,
+              JavaScript frameworks, and CMS platforms from landing pages to complex dashboards.
+            </p>
+            <a href="contact.html?subject=Web%20Development" class="project-link">Request Quotation <i
+                class="fas fa-arrow-right"></i></a>
+          </div>
+
+          <!-- 9. Custom Enterprise Solutions -->
+          <div class="glass-card service-card">
+            <div class="service-icon"><i class="fas fa-building"></i></div>
+            <div class="service-title">Custom Enterprise Solutions</div>
+            <p class="service-desc">
+              Tailored software systems for clinics, law firms, garages, agribusinesses, and NGOs.
+              Built to your exact workflow with full documentation and governance handover.
+            </p>
+            <a href="contact.html?subject=Custom%20Enterprise%20Solution" class="project-link">Request Quotation <i
+                class="fas fa-arrow-right"></i></a>
+          </div>
+
+          <!-- 10. Predictive Analytics -->
+          <div class="glass-card service-card">
+            <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+            <div class="service-title">Predictive Analytics &amp; Data Science</div>
+            <p class="service-desc">
+              Leveraging Python, TensorFlow, and data science pipelines to predict trends,
+              optimize operations, and turn raw business data into actionable insights.
+            </p>
+            <a href="contact.html?subject=Predictive%20Analytics" class="project-link">Request Quotation <i
+                class="fas fa-arrow-right"></i></a>
+          </div>
+
+          <!-- 11. IoT Solutions -->
+          <div class="glass-card service-card">
+            <div class="service-icon"><i class="fas fa-microchip"></i></div>
+            <div class="service-title">IoT System Integration</div>
+            <p class="service-desc">
+              Connecting hardware sensors to web dashboards for real-time monitoring and alerts
+              applied to agriculture, logistics, and facility management use cases.
+            </p>
+            <a href="contact.html?subject=IoT%20Solution" class="project-link">Request Quotation <i
+                class="fas fa-arrow-right"></i></a>
+          </div>
+
+          <!-- 12. IT Consulting -->
+          <div class="glass-card service-card">
+            <div class="service-icon"><i class="fas fa-lightbulb"></i></div>
+            <div class="service-title">IT Consulting &amp; Strategy</div>
+            <p class="service-desc">
+              Advisory sessions for startups and SMEs covering tech stack selection,
+              product roadmaps, team structure, and digital transformation strategies.
+            </p>
+            <a href="contact.html?subject=IT%20Consulting" class="project-link">Request Quotation <i
+                class="fas fa-arrow-right"></i></a>
+          </div>
+
+        </div>
+
+        <!-- CTA -->
+        <div class="text-center mt-8 reveal" style="margin-top:56px;">
+          <div class="glass-card" style="padding:40px;max-width:600px;margin:0 auto;">
+            <div class="section-label" style="justify-content:center;margin-bottom:16px;"><i
+                class="fas fa-handshake"></i> Ready to Start?</div>
+            <h2
+              style="font-family:'Outfit',sans-serif;font-size:1.5rem;font-weight:700;color:var(--text-primary);margin-bottom:10px;">
+              Let's Discuss Your Project</h2>
+            <p style="color:var(--text-secondary);font-size:0.88rem;margin-bottom:24px;">
+              Reach out at <a href="mailto:ceo@sericsoft.com"
+                style="color:var(--accent-cyan);font-weight:600;">ceo@sericsoft.com</a>
+              or use the contact form to describe your requirements and timeline.
+            </p>
+            <a href="contact.html" class="btn-primary"><i class="fas fa-paper-plane"></i> Get a Free Consultation</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </div><!-- /page-wrapper -->
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-social">
+        <a href="https://facebook.com/techbros631" target="_blank" aria-label="Facebook"><i
+            class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/gideonmwiti001" target="_blank" aria-label="Instagram"><i
+            class="fab fa-instagram"></i></a>
+        <a href="https://x.com/techbros631" target="_blank" aria-label="X / Twitter"><i
+            class="fab fa-x-twitter"></i></a>
+        <a href="https://wa.me/254798985389?text=Hello%20I%27m%20interested%20in%20your%20services" target="_blank"
+          aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://github.com/GideonMwiti" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="mailto:ceo@sericsoft.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        <a href="tel:+254798985389" aria-label="Phone"><i class="fas fa-phone"></i></a>
+      </div>
+      <hr class="footer-divider">
+      <p class="footer-copy">&copy; <span id="currentYear"></span> <span>Gideon Mwiti</span> · CEO, <a
+          href="https://www.sericsoft.com" target="_blank" rel="noopener"
+          style="color:var(--accent-cyan);text-decoration:none;">Sericsoft Innovations Ltd</a>. All rights reserved.</p>
     </div>
   </footer>
-  
-  <!-- ========== JavaScript Section ========== -->
-  
-  <!-- Script to automatically update the copyright year -->
+
   <script>
     document.getElementById('currentYear').textContent = new Date().getFullYear();
-  </script>
-  
- 
-<script>
-  // Highlight active navigation link
-  document.addEventListener('DOMContentLoaded', function() {
-      const navLinks = document.querySelectorAll('.nav-link');
-      const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-  
-      navLinks.forEach(link => {
-          const linkPage = link.getAttribute('href');
-          
-          // Add active styles if URLs match
-          if (linkPage === currentPage) {
-              link.classList.add('text-blue-600', 'border-blue-600');
-              link.classList.remove('text-gray-600', 'border-transparent');
-          }
-      });
-  });
-  </script>
-  
-  <!-- Script for mobile menu toggle functionality -->
-  <script>
-    // Select the mobile menu button and menu container
-    const mobileMenuButton = document.getElementById('menuBtn');
+    const menuBtn = document.getElementById('menuBtn');
     const mobileMenu = document.getElementById('mobileMenu');
-    
-    // Toggle mobile menu visibility when button is clicked
-    mobileMenuButton.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+      menuBtn.querySelector('i').classList.toggle('fa-bars');
+      menuBtn.querySelector('i').classList.toggle('fa-xmark');
     });
-    
-    // Hide mobile menu when any mobile link is clicked
-    document.querySelectorAll('#mobileMenu a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
-      });
-    });
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   </script>
-  
 </body>
+
 </html>

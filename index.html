@@ -1,458 +1,708 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <!-- =======================
-       Metadata & Page Title
-  ============================ -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GIDEON-MWITI</title>
-  
-  <!-- =======================
-       External Stylesheets & Libraries
-  ============================ -->
-  
-  <!-- Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  
-  <!-- Tailwind CSS framework -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Gideon Mwiti | CEO & IT Project Manager</title>
+  <meta name="description"
+    content="Gideon Mwiti – CEO of Sericsoft Innovations Ltd & IT Project Manager. Bridging technical execution with professional project governance.">
 
-  <!-- =======================
-        Favicon links 
-  ============================ -->
-   <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
-   <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
-   <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
-   <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
-   <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
-   <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
-   <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
-   <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
-   <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-   <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
-   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-   <link rel="manifest" href="/manifest.json">
-   <meta name="msapplication-TileColor" content="#ffffff">
-   <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-   <meta name="theme-color" content="#ffffff">
+  <!-- Design System -->
+  <link rel="stylesheet" href="style.css">
 
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#060b18">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#060b18">
+
+  <style>
+    /* ---- Hero ---- */
+    .hero-section {
+      min-height: calc(100vh - var(--nav-height));
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 60px 0;
+    }
+
+    .hero-glow {
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(0, 212, 255, 0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(2rem, 5vw, 3.6rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 16px;
+      color: var(--text-primary);
+    }
+
+    .hero-sub {
+      font-size: clamp(0.95rem, 2vw, 1.15rem);
+      color: var(--text-secondary);
+      max-width: 560px;
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+
+    .hero-typing {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-bottom: 36px;
+      min-height: 26px;
+    }
+
+    .hero-typing span {
+      color: var(--accent-cyan);
+      font-weight: 600;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+
+    .hero-stat-item {
+      text-align: left;
+    }
+
+    .hero-stat-num {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.9rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-indigo));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+    }
+
+    .hero-stat-lbl {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-top: 2px;
+    }
+
+    .hero-image-wrap {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-image-ring {
+      position: absolute;
+      inset: -12px;
+      border-radius: 50%;
+      background: conic-gradient(from 0deg, var(--accent-cyan), var(--accent-indigo), var(--accent-cyan));
+      opacity: 0.3;
+      animation: spinRing 8s linear infinite;
+    }
+
+    @keyframes spinRing {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .hero-img {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--border-accent);
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 0 60px rgba(0, 212, 255, 0.15);
+    }
+
+    .hero-badge {
+      position: absolute;
+      bottom: 10px;
+      right: -10px;
+      background: rgba(6, 11, 24, 0.9);
+      border: 1px solid var(--border-accent);
+      border-radius: 12px;
+      padding: 10px 14px;
+      z-index: 2;
+      backdrop-filter: blur(10px);
+      text-align: center;
+      min-width: 110px;
+    }
+
+    .hero-badge-icon {
+      font-size: 1.3rem;
+      color: var(--accent-cyan);
+      margin-bottom: 2px;
+    }
+
+    .hero-badge-label {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .hero-badge-val {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    /* hero layout */
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 60px;
+      align-items: center;
+    }
+
+    @media (max-width: 860px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero-sub,
+      .hero-typing {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-ctas,
+      .hero-stats {
+        justify-content: center;
+      }
+
+      .hero-stat-item {
+        text-align: center;
+      }
+
+      .hero-image-wrap {
+        margin-top: 32px;
+      }
+
+      .hero-badge {
+        right: 10px;
+      }
+    }
+
+    /* ---- About Preview ---- */
+    .about-preview-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    @media (max-width: 768px) {
+      .about-preview-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ---- Ecosystem Preview ---- */
+    .eco-preview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .eco-mini-card {
+      padding: 20px;
+      cursor: default;
+    }
+
+    .eco-mini-icon {
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+    }
+
+    .eco-mini-name {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+
+    .eco-mini-type {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    @media (max-width: 900px) {
+      .eco-preview-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 560px) {
+      .eco-preview-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ---- Contact Preview ---- */
+    .contact-preview-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      max-width: 560px;
+      margin: 0 auto 32px;
+    }
+
+    .contact-prev-card {
+      padding: 24px;
+      text-align: center;
+    }
+
+    .contact-prev-icon {
+      font-size: 1.5rem;
+      color: var(--accent-cyan);
+      margin-bottom: 10px;
+    }
+
+    .contact-prev-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .contact-prev-val {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    @media (max-width: 480px) {
+      .contact-preview-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
-<body class="bg-gray-100">
-  
-  <!-- =======================
-       Navigation Section
-  ============================ -->
-  
-  <nav class="fixed w-full bg-white shadow-lg z-50">
-     <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-      <!-- Brand Logo -->
-     <div class="flex items-center">
-       <img src="logo.png" alt="GIDEON-MWITI LOGO" class="h-16 w-auto">
-     </div>
-      
-      
-      <!-- Desktop Navigation  -->
-     <div class="hidden md:flex space-x-8">
-         <a href="index.html" class="nav-link text-gray-600 font-bold hover:text-blue-600 flex items-center relative border-b-2 border-transparent transition-colors duration-200">
-             <i class="fas fa-home mr-2"></i> Home
-         </a>
-         <a href="about.html" class="nav-link text-gray-600 font-bold hover:text-blue-600 flex items-center relative border-b-2 border-transparent transition-colors duration-200">
-             <i class="fas fa-user mr-2"></i> About
-         </a>
-         <a href="services.html" class="nav-link text-gray-600 font-bold hover:text-blue-600 flex items-center relative border-b-2 border-transparent transition-colors duration-200">
-             <i class="fas fa-cogs mr-2"></i> Services
-         </a>
-         <a href="portfolio.html" class="nav-link text-gray-600 font-bold hover:text-blue-600 flex items-center relative border-b-2 border-transparent transition-colors duration-200">
-             <i class="fas fa-briefcase mr-2"></i> Portfolio
-         </a>
-         <a href="contact.html" class="nav-link text-gray-600 font-bold hover:text-blue-600 flex items-center relative border-b-2 border-transparent transition-colors duration-200">
-             <i class="fas fa-envelope mr-2"></i> Contact
-        </a>
-</div>
-   <!-- Mobile Menu Toggle -->
-   <div class="md:hidden">
-    <button id="menuBtn" class="text-gray-600">
-      <i class="fas fa-bars text-2xl"></i>
-    </button>
-  </div>
-</div>
-<!-- Mobile Menu -->
-<div id="mobileMenu" class="md:hidden bg-white hidden">
-  <div class="px-4 py-2 space-y-4">
-    <a href="index.html" class="block text-gray-600 font-bold hover:text-blue-600 flex items-center">
-      <i class="fas fa-home mr-2"></i> Home
-    </a>
-    <a href="about.html" class="block text-gray-600 font-bold hover:text-blue-600 flex items-center">
-      <i class="fas fa-user mr-2"></i> About
-    </a>
-    <a href="services.html" class="block text-gray-600 font-bold hover:text-blue-600 flex items-center">
-      <i class="fas fa-cogs mr-2"></i> Services
-    </a>
-    <a href="portfolio.html" class="block text-gray-600 font-bold hover:text-blue-600 flex items-center">
-      <i class="fas fa-briefcase mr-2"></i> Portfolio
-    </a>
-    <a href="contact.html" class="block text-gray-600 font-bold hover:text-blue-600 flex items-center">
-      <i class="fas fa-envelope mr-2"></i> Contact
-    </a>
-  </div>
-       
-  </div>
+
+<body>
+  <div class="bg-animated"></div>
+
+  <!-- ===================== NAVIGATION ===================== -->
+  <nav class="nav-glass" role="navigation" aria-label="Main Navigation">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-first">GIDEON</span><span class="logo-last">MWITI</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html" class="nav-link-item active"><i class="fas fa-home"></i> Home</a>
+        <a href="about.html" class="nav-link-item"><i class="fas fa-user"></i> About</a>
+        <a href="services.html" class="nav-link-item"><i class="fas fa-cogs"></i> Services</a>
+        <a href="portfolio.html" class="nav-link-item"><i class="fas fa-briefcase"></i> Ecosystem</a>
+        <a href="contact.html" class="nav-link-item"><i class="fas fa-envelope"></i> Contact</a>
+      </div>
+
+      <button id="menuBtn" class="nav-mobile-btn" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+    <div id="mobileMenu" class="nav-mobile-menu">
+      <a href="index.html" class="active"><i class="fas fa-home"></i> Home</a>
+      <a href="about.html"><i class="fas fa-user"></i> About</a>
+      <a href="services.html"><i class="fas fa-cogs"></i> Services</a>
+      <a href="portfolio.html"><i class="fas fa-briefcase"></i> Ecosystem</a>
+      <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+    </div>
   </nav>
 
-  <!-- =======================
-       Hero Section
-       Introduction area with a dynamic typing effect.
-  ============================ -->
-  <section class="py-24">
-    <div class="max-w-6xl mx-auto px-4">
-      <div class="text-center">
-        <!-- Dynamic Typing Effect for Role Description -->
-        <h1 class="text-4xl font-bold mb-4">
-          I'm <span id="dynamic-prefix"></span> <span id="dynamic-text" class="text-blue-500"></span>
-        </h1>
-        <div class="flex justify-center gap-4">
-          <!-- Call-to-Action Buttons -->
-          <a href="contact.html" class="bg-blue-500 text-white px-8 py-3 rounded-lg border-2 border-transparent hover:bg-transparent hover:text-blue-500 hover:border-blue-500 transition-all duration-300">
-            Get Started
-          </a>
-          <a href="https://drive.google.com/uc?export=download&id=1jQpGyiMIGBDpeULxfBtrfABDJtVzWdZv" class="border-2 border-blue-500 text-blue-500 px-8 py-3 rounded-lg hover:bg-transparent hover:text-blue-700 hover:border-blue-700 transition-all duration-300">
-            Download CV
-          </a>                   
-        </div>
-      </div>
-    </div>
-  </section>
+  <div class="page-wrapper">
 
-  <!-- =======================
-       About Preview Section
-       Brief introduction with a link to the full "About" page.
-  ============================ -->
-  <section class="py-16 bg-white">
-    <div class="max-w-6xl mx-auto px-4">
-      <div class="bg-gray-100 p-8 rounded-lg shadow-md">
-        <div class="text-center">
-          <h2 class="text-3xl font-bold mb-6">About Me</h2>
-          <p class="text-gray-600 mb-8 max-w-2xl mx-auto">
-            I am an IT Project Manager with a passion for software development and a keen interest in AI & ML innovations. With extensive experience managing both corporate and freelance projects, I leverage agile methodologies and digital transformation strategies to deliver cutting-edge IT solutions. 
-          </p>
-          <a href="about.html" class="bg-blue-500 text-white px-6 py-2 rounded-lg border-2 border-transparent hover:bg-transparent hover:text-blue-500 hover:border-blue-500 transition-all duration-300">
-            View More →
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- =======================
-       Services Preview Section
-       Overview of key services offered.
-  ============================ -->
-  <section class="py-16 bg-gray-50">
-    <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-12">Key Services</h2>
-      <div class="grid md:grid-cols-3 gap-8">
-        <!-- Service 1: IT Project Management -->
-        <div class="bg-white p-6 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:shadow-lg">
-          <i class="fas fa-tasks text-blue-500 text-3xl mb-4"></i>
-          <h3 class="text-xl font-bold mb-2">IT Project Management</h3>
-          <p class="text-gray-600">
-            Efficiently plan, execute, and monitor IT projects using Agile and traditional methodologies to ensure timely delivery, optimal resource utilization, and successful project outcomes.
-          </p>
-          <a href="contact.html?subject=IT%20Project%20Management" class="block mt-4 font-bold text-blue-600 hover:underline">REQUEST QUOTATION</a>
-        </div>
-        <!-- Service 2: AI & ML Enthusiast -->
-        <div class="bg-white p-6 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:shadow-lg">
-          <i class="fas fa-robot text-blue-500 text-3xl mb-4"></i>
-          <h3 class="text-xl font-bold mb-2">AI & ML Enthusiast</h3>
-          <p class="text-gray-600">
-            Developing AI-powered applications, predictive analytics, natural language processing (NLP), and intelligent automation to help businesses innovate and stay ahead in a data-driven world.
-          </p>
-          <a href="contact.html?subject=AI%20and%20ML%20Project" class="block mt-4 font-bold text-blue-600 hover:underline">REQUEST QUOTATION</a>
-        
-        </div>
-        <!-- Service 3: Software Development -->
-        <div class="bg-white p-6 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:shadow-lg">
-          <i class="fas fa-code text-blue-500 text-3xl mb-4"></i>
-          <h3 class="text-xl font-bold mb-2">Software Development</h3>
-          <p class="text-gray-600">
-            I develop USSD applications, web applications, and mobile apps, delivering scalable and user-friendly solutions. My expertise ensures secure, high-performance systems tailored to business needs. From design to deployment, I create efficient digital experiences.
-          </p>
-          <a href="contact.html?subject=Software%20Development" class="block mt-4 font-bold text-blue-600 hover:underline">REQUEST QUOTATION</a>
-        </div>
-      </div>
-      <div class="text-center mt-8">
-        <a href="services.html" class="bg-blue-500 text-white px-8 py-3 rounded-lg border-2 border-transparent hover:bg-transparent hover:text-blue-500 hover:border-blue-500 transition-all duration-300">
-          View All Services →
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- =======================
-       Projects Preview Section
-       Showcase of featured projects with hover overlays.
-  ============================ -->
-  <section class="py-16 bg-white">
-    <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-12">Featured Projects</h2>
-      <div class="grid md:grid-cols-3 gap-8">
-        <!-- Project 1: Irene Mutheu Website -->
-        <div class="relative group overflow-hidden rounded-lg">
-          <div class="relative">
-            <img src="web.png" alt="Irene Mutheu Website" class="w-full h-71 object-cover">
-            <!-- Hover Overlay for Project Details -->
-            <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <h3 class="text-xl font-bold text-white mb-2">Irene Mutheu Official</h3>
-              <p class="text-gray-200 text-center px-4">Personal portfolio and branding site</p>
+    <!-- ===================== HERO ===================== -->
+    <section class="hero-section">
+      <div class="hero-glow"></div>
+      <div class="container">
+        <div class="hero-grid">
+          <!-- Left: Text -->
+          <div>
+            <div class="section-label"><i class="fas fa-building"></i> CEO · Sericsoft Innovations Ltd</div>
+            <h1 class="hero-title">
+              Gideon Mwiti<br>
+              <span class="text-gradient">CEO & IT Project Manager</span>
+            </h1>
+            <p class="hero-sub">
+              Bridging the gap between technical execution and professional project governance.
+            </p>
+            <p class="hero-typing">
+              <span id="typing-text"></span><span class="cursor"
+                style="color:var(--accent-cyan);animation:blink 1s step-end infinite;">|</span>
+            </p>
+            <div class="hero-ctas">
+              <a href="contact.html" class="btn-primary"><i class="fas fa-paper-plane"></i> Get In Touch</a>
+              <a href="https://drive.google.com/uc?export=download&id=1jQpGyiMIGBDpeULxfBtrfABDJtVzWdZv"
+                class="btn-outline"><i class="fas fa-download"></i> Download CV</a>
+            </div>
+            <div class="hero-stats">
+              <div class="hero-stat-item">
+                <div class="hero-stat-num">10+</div>
+                <div class="hero-stat-lbl">Products Built</div>
+              </div>
+              <div class="hero-stat-item">
+                <div class="hero-stat-num">3+</div>
+                <div class="hero-stat-lbl">Years Experience</div>
+              </div>
+              <div class="hero-stat-item">
+                <div class="hero-stat-num">100%</div>
+                <div class="hero-stat-lbl">Client Satisfaction</div>
+              </div>
             </div>
           </div>
-          <div class="text-center mt-4">
-            <a href="https://irenemutheu.netlify.app/" class="text-blue-500 font-bold hover:underline hover:text-blue-700 transition duration-300">
-              View Project
-            </a>
-          </div>
-        </div>
-        
-        <!-- Project 2: DIAGNOSYS -->
-        <div class="relative group overflow-hidden rounded-lg">
-          <div class="relative">
-            <img src="Afya Axis.png" alt="Diagnosys" class="w-full h-71 object-cover">
-            <!-- Hover Overlay for Project Details -->
-            <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <h3 class="text-xl font-bold text-white mb-2">Diagnosys</h3>
-              <p class="text-gray-200 text-center px-4">AI-powered diagnosis and personalized treatment recommendations.</p>
+
+          <!-- Right: Photo -->
+          <div class="hero-image-wrap">
+            <div class="hero-image-ring"></div>
+            <img src="ceo.jpeg" alt="Gideon Mwiti" class="hero-img">
+            <div class="hero-badge">
+              <div class="hero-badge-icon"><i class="fas fa-briefcase"></i></div>
+              <div class="hero-badge-label">Status</div>
+              <div class="hero-badge-val">Available</div>
             </div>
           </div>
-          <div class="text-center mt-4">
-            <a href="https://www.diagnosyshealth.com" class="text-blue-500 font-bold hover:underline hover:text-blue-700 transition duration-300">
-              View Project
-            </a>
-          </div>
         </div>
-        
-        <!-- Project 3: Best Manager -->
-        <div class="relative group overflow-hidden rounded-lg">
-          <div class="relative">
-            <img src="bestmanager.png" alt="Best Manager" class="w-full h-71 object-cover">
-            <!-- Hover Overlay for Project Details -->
-            <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <h3 class="text-xl font-bold text-white mb-2">Best Manager</h3>
-              <p class="text-gray-200 text-center px-4">Project management system for IT teams</p>
+      </div>
+    </section>
+
+    <!-- ===================== ABOUT PREVIEW ===================== -->
+    <section class="section-pad">
+      <div class="container">
+        <div class="about-preview-grid reveal">
+          <div>
+            <div class="section-label"><i class="fas fa-user-tie"></i> Who I Am</div>
+            <h2 class="section-title">IT Project Manager<br>& <span class="text-gradient">SaaS Founder</span></h2>
+            <p class="section-desc" style="margin-bottom:24px;">
+              As CEO of Sericsoft Innovations Ltd, I lead the design and delivery of enterprise-grade software products.
+              A BSc Project Planning & Management student at Kisii University, I combine academic governance frameworks
+              with hands-on engineering to deliver scalable IT solutions across East Africa.
+            </p>
+            <a href="about.html" class="btn-outline"><i class="fas fa-arrow-right"></i> Full Profile</a>
+          </div>
+          <div class="glass-card" style="padding:28px;display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+            <div class="stat-card">
+              <div class="stat-number">PHP</div>
+              <div class="stat-label">Primary Stack</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">Agile</div>
+              <div class="stat-label">Methodology</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">PMBOK</div>
+              <div class="stat-label">Governance</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">SaaS</div>
+              <div class="stat-label">Specialization</div>
             </div>
           </div>
-          <div class="text-center mt-4">
-            <a href="https://github.com/GideonMwiti/bestmanager" class="text-blue-500 font-bold hover:underline hover:text-blue-700 transition duration-300">
-              View Project
-            </a>
-          </div>
         </div>
       </div>
-      <div class="text-center mt-8">
-        <a href="portfolio.html" class="bg-blue-500 text-white px-8 py-3 rounded-lg border-2 border-transparent hover:bg-transparent hover:text-blue-500 hover:border-blue-500 transition-all duration-300">
-          View more →
-        </a>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- =======================
-       Contact Preview Section
-       Brief contact information and call-to-action.
-  ============================ -->
-  <section class="py-16 bg-gray-50">
-    <div class="max-w-6xl mx-auto px-4">
-      <div class="text-center">
-        <h2 class="text-3xl font-bold mb-6">Get In Touch</h2>
-        <p class="text-gray-600 mb-8 max-w-2xl mx-auto">
-          Ready to discuss your project? Let's explore how we can transform your vision into reality.
-        </p>
-        <div class="grid md:grid-cols-2 gap-8">
-          <!-- Contact via Email -->
-          <div class="bg-white p-6 rounded-lg shadow-md">
-            <i class="fas fa-envelope text-blue-500 text-2xl mb-4"></i>
-            <h3 class="text-xl font-bold mb-2">Email</h3>
-            <p class="text-gray-600">mwitigideon002@gmail.com</p>
+    <!-- ===================== SERVICES PREVIEW ===================== -->
+    <section class="section-pad"
+      style="background: rgba(255,255,255,0.01); border-top:1px solid var(--border-glass); border-bottom:1px solid var(--border-glass);">
+      <div class="container">
+        <div class="text-center mb-8 reveal">
+          <div class="section-label" style="justify-content:center;"><i class="fas fa-cogs"></i> What I Offer</div>
+          <h2 class="section-title">Core Competencies</h2>
+        </div>
+        <div class="grid-3 reveal">
+          <div class="glass-card service-card">
+            <div class="service-icon"><i class="fas fa-tasks"></i></div>
+            <div class="service-title">IT Project Management</div>
+            <p class="service-desc">End-to-end project governance using Agile, Scrum & PMBOK frameworks from planning
+              through delivery and closure.</p>
+            <a href="contact.html?subject=IT%20Project%20Management" class="project-link">Request Quotation <i
+                class="fas fa-arrow-right"></i></a>
           </div>
-          <!-- Contact via Phone -->
-          <div class="bg-white p-6 rounded-lg shadow-md">
-            <i class="fas fa-phone text-blue-500 text-2xl mb-4"></i>
-            <h3 class="text-xl font-bold mb-2">Phone</h3>
-            <p class="text-gray-600">+254 798 985 389</p>
+          <div class="glass-card service-card">
+            <div class="service-icon"><i class="fas fa-code"></i></div>
+            <div class="service-title">Software Engineering</div>
+            <p class="service-desc">Full-stack development of web apps, USSD systems, and multi-tenant SaaS platforms
+              using PHP, MySQL, and JavaScript.</p>
+            <a href="contact.html?subject=Software%20Development" class="project-link">Request Quotation <i
+                class="fas fa-arrow-right"></i></a>
+          </div>
+          <div class="glass-card service-card">
+            <div class="service-icon"><i class="fas fa-robot"></i></div>
+            <div class="service-title">AI & Digital Transformation</div>
+            <p class="service-desc">Integrating AI-powered analytics and intelligent automation to help businesses
+              innovate and stay ahead in a data-driven world.</p>
+            <a href="contact.html?subject=AI%20and%20Digital%20Transformation" class="project-link">Request Quotation <i
+                class="fas fa-arrow-right"></i></a>
           </div>
         </div>
-        <div class="mt-8">
-          <a href="contact.html" class="bg-blue-500 text-white px-8 py-3 rounded-lg border-2 border-transparent hover:bg-transparent hover:text-blue-500 hover:border-blue-500 transition-all duration-300">
-            Send Message →
-          </a>
+        <div class="text-center mt-8 reveal">
+          <a href="services.html" class="btn-outline"><i class="fas fa-arrow-right"></i> All Services</a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- =======================
-       Footer Section
-       Social links and copyright notice.
-  ============================ -->
-  <footer class="bg-gray-800 text-white py-8 mt-16">
-    <div class="max-w-6xl mx-auto px-4">
-      <!-- Social Media Links -->
-      <div class="flex justify-center space-x-6 mb-8">
-        <a href="https://facebook.com/techbros631" target="_blank" class="hover:text-blue-200 transition-colors">
-          <i class="fab fa-facebook text-2xl"></i>
-        </a>
-        <a href="https://www.instagram.com/gideonmwiti001" target="_blank" class="hover:text-blue-200 transition-colors">
-          <i class="fab fa-instagram text-2xl"></i>
-        </a>
-        
-        <a href="https://x.com/techbros631" target="_blank" class="hover:text-blue-200 transition-colors">
-          <i class="fab fa-twitter text-2xl"></i>
-        </a>
-        <a href="https://wa.me/254798985389?text=Hello%20I%27m%20interested%20in%20your%20services" target="_blank" class="hover:text-blue-200 transition-colors">
-          <i class="fab fa-whatsapp text-2xl"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/mwitigideon/" target="_blank" class="hover:text-blue-200 transition-colors">
-          <i class="fab fa-linkedin text-2xl"></i>
-        </a>
-        <a href="https://github.com/GideonMwiti" target="_blank" class="hover:text-blue-200 transition-colors">
-          <i class="fab fa-github text-2xl"></i>
-        </a>
-        <a href="mailto:mwitigideon002@gmail.com" class="hover:text-blue-200 transition-colors">
-          <i class="fas fa-envelope text-2xl"></i>
-        </a>
-        <a href="tel:+254798985389" class="hover:text-blue-200 transition-colors">
-          <i class="fas fa-phone text-2xl"></i>
-        </a>
+    <!-- ===================== PRODUCT ECOSYSTEM PREVIEW ===================== -->
+    <section class="section-pad">
+      <div class="container">
+        <div class="text-center mb-8 reveal">
+          <div class="section-label" style="justify-content:center;"><i class="fas fa-cubes"></i> Product Ecosystem
+          </div>
+          <h2 class="section-title">Built & Governed by Sericsoft</h2>
+          <p class="section-desc" style="margin: 0 auto;">A portfolio of enterprise SaaS products, IoT solutions, and
+            community platforms each shipped with a defined governance strategy.</p>
+        </div>
+        <div class="eco-preview-grid reveal">
+
+          <!-- GarageMaster -->
+          <div class="glass-card eco-mini-card">
+            <div class="eco-mini-icon">🚗</div>
+            <div class="eco-mini-name">GarageMaster</div>
+            <div class="eco-mini-type">Garage Management SaaS</div>
+            <div class="project-chips">
+              <span class="tech-chip">PHP</span>
+              <span class="tech-chip">MySQL</span>
+              <span class="tech-chip">JS</span>
+            </div>
+            <span class="badge badge-live" style="margin-top:10px;display:inline-flex;"><i class="fas fa-circle"
+                style="font-size:6px;"></i> Live</span>
+          </div>
+
+          <!-- Ghala-Smart -->
+          <div class="glass-card eco-mini-card">
+            <div class="eco-mini-icon">🌿</div>
+            <div class="eco-mini-name">Ghala-Smart</div>
+            <div class="eco-mini-type">IoT AgriTech · Hackathon</div>
+            <div class="project-chips">
+              <span class="tech-chip">PHP</span>
+              <span class="tech-chip">IoT</span>
+              <span class="tech-chip">MySQL</span>
+            </div>
+            <span class="badge badge-active" style="margin-top:10px;display:inline-flex;"><i class="fas fa-circle"
+                style="font-size:6px;"></i> Active</span>
+          </div>
+
+          <!-- Best Manager -->
+          <div class="glass-card eco-mini-card">
+            <div class="eco-mini-icon">📋</div>
+            <div class="eco-mini-name">Best Manager</div>
+            <div class="eco-mini-type">Task Management System</div>
+            <div class="project-chips">
+              <span class="tech-chip">PHP</span>
+              <span class="tech-chip">MySQL</span>
+              <span class="tech-chip">JS</span>
+            </div>
+            <span class="badge badge-uat" style="margin-top:10px;display:inline-flex;"><i class="fas fa-circle"
+                style="font-size:6px;"></i> UAT</span>
+          </div>
+
+          <!-- Cryopath -->
+          <div class="glass-card eco-mini-card">
+            <div class="eco-mini-icon">🧊</div>
+            <div class="eco-mini-name">Cryopath</div>
+            <div class="eco-mini-type">Laboratory Management</div>
+            <div class="project-chips">
+              <span class="tech-chip">PHP</span>
+              <span class="tech-chip">MySQL</span>
+              <span class="tech-chip">JS</span>
+            </div>
+            <span class="badge badge-live" style="margin-top:10px;display:inline-flex;"><i class="fas fa-circle"
+                style="font-size:6px;"></i> Live</span>
+          </div>
+
+          <!-- LCMS -->
+          <div class="glass-card eco-mini-card">
+            <div class="eco-mini-icon">⚖️</div>
+            <div class="eco-mini-name">LCMS</div>
+            <div class="eco-mini-type">Legal Case Management</div>
+            <div class="project-chips">
+              <span class="tech-chip">PHP</span>
+              <span class="tech-chip">MySQL</span>
+              <span class="tech-chip">JS</span>
+            </div>
+            <span class="badge badge-live" style="margin-top:10px;display:inline-flex;"><i class="fas fa-circle"
+                style="font-size:6px;"></i> Live</span>
+          </div>
+
+          <!-- Uyatsa -->
+          <div class="glass-card eco-mini-card">
+            <div class="eco-mini-icon">🤝</div>
+            <div class="eco-mini-name">Uyatsa</div>
+            <div class="eco-mini-type">Community Networking</div>
+            <div class="project-chips">
+              <span class="tech-chip">PHP</span>
+              <span class="tech-chip">MySQL</span>
+              <span class="tech-chip">JS</span>
+            </div>
+            <span class="badge badge-active" style="margin-top:10px;display:inline-flex;"><i class="fas fa-circle"
+                style="font-size:6px;"></i> Active</span>
+          </div>
+
+        </div>
+        <div class="text-center mt-8 reveal">
+          <a href="portfolio.html" class="btn-primary"><i class="fas fa-cubes"></i> Explore Full Ecosystem</a>
+        </div>
       </div>
-      
-      <!-- Copyright Notice -->
-      <div class="border-t border-blue-400 pt-6 text-center">
-        <p class="text-blue-100">
-          &copy; <span id="currentYear"></span> GIDEON-MWITI. All rights reserved.
-        </p>
+    </section>
+
+    <!-- ===================== CONTACT PREVIEW ===================== -->
+    <section class="section-pad" style="background: rgba(255,255,255,0.01); border-top:1px solid var(--border-glass);">
+      <div class="container text-center">
+        <div class="reveal">
+          <div class="section-label" style="justify-content:center;"><i class="fas fa-envelope"></i> Let's Collaborate
+          </div>
+          <h2 class="section-title">Ready to Build Something<br><span class="text-gradient">Exceptional?</span></h2>
+          <p class="section-desc" style="margin: 0 auto 32px;">
+            Reach out to discuss projects, partnerships or opportunities.
+          </p>
+          <div class="contact-preview-grid">
+            <div class="glass-card contact-prev-card">
+              <div class="contact-prev-icon"><i class="fas fa-envelope"></i></div>
+              <div class="contact-prev-label">Email</div>
+              <div class="contact-prev-val">ceo@sericsoft.com</div>
+            </div>
+            <div class="glass-card contact-prev-card">
+              <div class="contact-prev-icon"><i class="fas fa-phone"></i></div>
+              <div class="contact-prev-label">Phone</div>
+              <div class="contact-prev-val">+254 798 985 389</div>
+            </div>
+          </div>
+          <a href="contact.html" class="btn-primary"><i class="fas fa-paper-plane"></i> Send a Message</a>
+        </div>
       </div>
+    </section>
+
+  </div><!-- /page-wrapper -->
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-social">
+        <a href="https://facebook.com/techbros631" target="_blank" aria-label="Facebook"><i
+            class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/gideonmwiti001" target="_blank" aria-label="Instagram"><i
+            class="fab fa-instagram"></i></a>
+        <a href="https://x.com/techbros631" target="_blank" aria-label="X / Twitter"><i
+            class="fab fa-x-twitter"></i></a>
+        <a href="https://wa.me/254798985389?text=Hello%20I%27m%20interested%20in%20your%20services" target="_blank"
+          aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://github.com/GideonMwiti" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="mailto:ceo@sericsoft.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        <a href="tel:+254798985389" aria-label="Phone"><i class="fas fa-phone"></i></a>
+      </div>
+      <hr class="footer-divider">
+      <p class="footer-copy">
+        &copy; <span id="currentYear"></span> <span>Gideon Mwiti</span> · CEO, <a href="https://www.sericsoft.com"
+          target="_blank" rel="noopener" style="color:var(--accent-cyan);text-decoration:none;">Sericsoft Innovations
+          Ltd</a>. All rights reserved.
+      </p>
     </div>
   </footer>
 
-  <!-- =======================
-       JavaScript Section
-       Scripts for dynamic functionalities.
-  ============================ -->
-  
-  <!-- Update the Copyright Year Dynamically -->
+  <!-- ===================== SCRIPTS ===================== -->
   <script>
-    // Set the current year in the footer automatically
+    // Year
     document.getElementById('currentYear').textContent = new Date().getFullYear();
-  </script>
-   
-   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Mobile menu toggle
-      const mobileMenuButton = document.getElementById('menuBtn');
-      const mobileMenu = document.getElementById('mobileMenu');
-      mobileMenuButton.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-      });
-      
-      // Tab functionality with active underline
-      const tabLinks = document.querySelectorAll('.tab-button');
-      const tabContents = document.querySelectorAll('.tab-content');
-      
-      tabLinks.forEach(link => {
-        link.addEventListener('click', function() {
-          // Remove active styles from all tabs
-          tabLinks.forEach(item => {
-            item.classList.remove('text-blue-500', 'border-blue-500', 'border-b-4');
-            item.classList.add('border-b-2', 'border-transparent');
-          });
-          // Hide all tab contents
-          tabContents.forEach(content => content.classList.add('hidden'));
-          
-          // Apply active styles to the clicked tab
-          this.classList.remove('border-transparent');
-          this.classList.add('text-blue-500', 'border-blue-500', 'border-b-4');
-          
-          // Show the corresponding content
-          const tabId = this.getAttribute('data-tab');
-          document.getElementById(tabId).classList.remove('hidden');
-        });
-      });
-      
-      // Set the first tab as active on load
-      if (tabLinks.length > 0) {
-        tabLinks[0].click();
-      }
-      
-      // Set current year in footer
-      document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+      menuBtn.querySelector('i').classList.toggle('fa-bars');
+      menuBtn.querySelector('i').classList.toggle('fa-xmark');
     });
-  </script>
 
-  <!-- Dynamic Typing Effect Script for Hero Section -->
-  <script>
-    // Array of role objects with their respective prefixes and texts
+    // Typing effect
     const roles = [
-      { prefix: "an", text: "IT Project Manager" },
-      { prefix: "an", text: "AI & ML Enthusiast" },
-      { prefix: "a", text: "Software Developer" }
+      'CEO · Sericsoft Innovations Ltd',
+      'IT Project Manager',
+      'Software Developer',
+      'Techpreneur',
+      'AI & ML Enthusiast',
+      'AI Advocate',
+      'SaaS Architect',
+      'Digital Innovator',
+      'Product Builder',
+      'Agile Practitioner',
+      'Tech Visionary',
+      'Startup Founder',
+      'Systems Thinker',
+      'Problem Solver',
+      'East Africa Tech Leader',
     ];
-
-    let index = 0;        // Index to track the current role
-    let charIndex = 0;    // Character index for the typing effect
-    let deleting = false; // Flag to indicate deletion phase
-    const speed = 100;    // Typing speed in milliseconds
-    const delay = 2000;   // Delay after word is fully typed before deleting
-    const textElement = document.getElementById("dynamic-text");
-    const prefixElement = document.getElementById("dynamic-prefix");
-
-    // Function to handle the typing and deleting effect recursively
-    function typeEffect() {
-      const currentRole = roles[index];
-      prefixElement.textContent = currentRole.prefix;
-
-      if (deleting) {
-        textElement.textContent = currentRole.text.substring(0, charIndex--);
-        if (charIndex < 0) {
-          deleting = false;
-          index = (index + 1) % roles.length;
-          setTimeout(typeEffect, 500);
-          return;
-        }
-      } else {
-        textElement.textContent = currentRole.text.substring(0, charIndex++);
-        if (charIndex > currentRole.text.length) {
-          deleting = true;
-          setTimeout(typeEffect, delay);
-          return;
-        }
-      }
-      setTimeout(typeEffect, speed);
+    let rIdx = 0, cIdx = 0, deleting = false;
+    const el = document.getElementById('typing-text');
+    function type() {
+      const cur = roles[rIdx];
+      el.textContent = deleting ? cur.substring(0, cIdx--) : cur.substring(0, cIdx++);
+      if (!deleting && cIdx > cur.length) { deleting = true; setTimeout(type, 1800); return; }
+      if (deleting && cIdx < 0) { deleting = false; rIdx = (rIdx + 1) % roles.length; setTimeout(type, 400); return; }
+      setTimeout(type, deleting ? 45 : 80);
     }
+    setTimeout(type, 800);
 
-    // Start the typing effect after DOM content loads
-    document.addEventListener("DOMContentLoaded", () => setTimeout(typeEffect, 1000));
-  </script>
-    
-    
-<script>
-  // Highlight active navigation link
-  document.addEventListener('DOMContentLoaded', function() {
-      const navLinks = document.querySelectorAll('.nav-link');
-      const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-  
-      navLinks.forEach(link => {
-          const linkPage = link.getAttribute('href');
-          
-          // Add active styles if URLs match
-          if (linkPage === currentPage) {
-              link.classList.add('text-blue-600', 'border-blue-600');
-              link.classList.remove('text-gray-600', 'border-transparent');
-          }
-      });
-  });
+    // Scroll reveal
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => observer.observe(el));
   </script>
 
+  <style>
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
+    }
+  </style>
 </body>
+
 </html>

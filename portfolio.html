@@ -1,315 +1,513 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <!--
-    ==========================================
-    Meta Information & External Resources
-    ==========================================
-  -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GIDEON-MWITI</title>
-  
-  <!-- Tailwind CSS for styling -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <!-- =======================
-        Favicon links 
-  ============================ -->
-<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-<link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/manifest.json">
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-<meta name="theme-color" content="#ffffff">
+  <title>Product Ecosystem | Gideon Mwiti – Sericsoft Innovations</title>
+  <meta name="description"
+    content="Sericsoft Innovations product ecosystem – GarageMaster, Ghala-Smart, Best Manager, Cryopath, LCMS, Uyatsa. Built with PHP, MySQL, JavaScript.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#060b18">
 
+  <style>
+    .filter-bar {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+
+    .filter-btn {
+      padding: 7px 18px;
+      border-radius: 20px;
+      border: 1px solid var(--border-glass);
+      background: var(--bg-glass);
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: rgba(0, 212, 255, 0.1);
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+    }
+
+    .ecosystem-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    @media (max-width: 1024px) {
+      .ecosystem-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .ecosystem-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .proj-field {
+      margin-bottom: 10px;
+    }
+
+    .proj-emoji-banner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      font-size: 4rem;
+    }
+  </style>
 </head>
-<body class="bg-gray-100">
-  
-  <!--
-    ==========================================
-    Navigation Section
-    ==========================================
-    - Contains a fixed navigation bar with brand logo,
-      desktop and mobile menus.
-  -->
-  <nav class="fixed w-full bg-white shadow-lg z-50">
-    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-      <!-- Brand Logo -->
-      <div class="flex items-center">
-        <img src="logo.png" alt="GIDEON-MWITI LOGO" class="h-16 w-auto">
+
+<body>
+  <div class="bg-animated"></div>
+
+  <!-- NAV -->
+  <nav class="nav-glass" role="navigation" aria-label="Main Navigation">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo"><span class="logo-first">GIDEON</span><span
+          class="logo-last">MWITI</span></a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link-item"><i class="fas fa-home"></i> Home</a>
+        <a href="about.html" class="nav-link-item"><i class="fas fa-user"></i> About</a>
+        <a href="services.html" class="nav-link-item"><i class="fas fa-cogs"></i> Services</a>
+        <a href="portfolio.html" class="nav-link-item active"><i class="fas fa-briefcase"></i> Ecosystem</a>
+        <a href="contact.html" class="nav-link-item"><i class="fas fa-envelope"></i> Contact</a>
       </div>
-      
-      <!--  Desktop Navigation  -->
-<div class="hidden md:flex space-x-8">
-  <a href="index.html" class="nav-link text-gray-600 font-bold hover:text-blue-600 flex items-center relative border-b-2 border-transparent transition-colors duration-200">
-    <i class="fas fa-home mr-2"></i> Home
-  </a>
-  <a href="about.html" class="nav-link text-gray-600 font-bold hover:text-blue-600 flex items-center relative border-b-2 border-transparent transition-colors duration-200">
-    <i class="fas fa-user mr-2"></i> About
-  </a>
-  <a href="services.html" class="nav-link text-gray-600 font-bold hover:text-blue-600 flex items-center relative border-b-2 border-transparent transition-colors duration-200">
-    <i class="fas fa-cogs mr-2"></i> Services
-  </a>
-  <a href="portfolio.html" class="nav-link text-gray-600 font-bold hover:text-blue-600 flex items-center relative border-b-2 border-transparent transition-colors duration-200">
-    <i class="fas fa-briefcase mr-2"></i> Portfolio
-  </a>
-  <a href="contact.html" class="nav-link text-gray-600 font-bold hover:text-blue-600 flex items-center relative border-b-2 border-transparent transition-colors duration-200">
-    <i class="fas fa-envelope mr-2"></i> Contact
-  </a>
-</div>
-      
-      <!-- Mobile Menu Toggle Button -->
-      <div class="md:hidden">
-        <button id="menuBtn" class="text-gray-600">
-          <i class="fas fa-bars text-2xl"></i>
-        </button>
-      </div>
+      <button id="menuBtn" class="nav-mobile-btn" aria-label="Toggle menu"><i class="fas fa-bars"></i></button>
     </div>
-    
-    <!-- Mobile Navigation Menu (Hidden by Default) -->
-    <div id="mobileMenu" class="mobile-menu md:hidden bg-white hidden">
-      <div class="px-4 py-2 space-y-4">
-        <!-- Mobile Navigation Items -->
-        <a href="index.html" class="block text-gray-600 font-bold hover:text-blue-600 flex items-center">
-          <i class="fas fa-home mr-2"></i> Home
-        </a>
-        <a href="about.html" class="block text-gray-600 font-bold hover:text-blue-600 flex items-center">
-          <i class="fas fa-user mr-2"></i> About
-        </a>
-        <a href="services.html" class="block text-gray-600 font-bold hover:text-blue-600 flex items-center">
-          <i class="fas fa-cogs mr-2"></i> Services
-        </a>
-        <a href="portfolio.html" class="block text-gray-600 font-bold hover:text-blue-600 flex items-center">
-          <i class="fas fa-briefcase mr-2"></i> Portfolio
-        </a>
-        <a href="contact.html" class="block text-gray-600 font-bold hover:text-blue-600 flex items-center">
-          <i class="fas fa-envelope mr-2"></i> Contact
-        </a>
-      </div>
-    </div> 
+    <div id="mobileMenu" class="nav-mobile-menu">
+      <a href="index.html"><i class="fas fa-home"></i> Home</a>
+      <a href="about.html"><i class="fas fa-user"></i> About</a>
+      <a href="services.html"><i class="fas fa-cogs"></i> Services</a>
+      <a href="portfolio.html" class="active"><i class="fas fa-briefcase"></i> Ecosystem</a>
+      <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+    </div>
   </nav>
-  
-  <!--
-    ==========================================
-    Projects Section
-    ==========================================
-    - Displays a list of latest projects categorized into 
-      "Client Projects" and "Personal Projects".
-  -->
-  <section class="py-20 bg-white">
-    <div class="max-w-6xl mx-auto px-4">
-      <!-- Section Title -->
-      <h2 class="text-3xl font-bold text-center mb-12">Latest Projects</h2>
-      
-      <!-- Client Projects -->
-      <h3 class="text-2xl font-semibold mb-6">Client Projects</h3>
-      <div class="grid md:grid-cols-3 gap-8">
-        
-        <!-- Irene Mutheu Official Project -->
-        <div class="relative group overflow-hidden rounded-lg">
-          <div class="relative">
-            <img src="web.png" alt="Irene Mutheu Website" class="w-full h-64 object-cover">
-            <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <h3 class="text-xl font-bold text-white mb-2">Irene Mutheu Official</h3>
-              <p class="text-gray-200 text-center px-4">Personal portfolio and branding site</p>
-            </div>
-          </div>
-          <div class="text-center mt-4">
-            <a href="https://irenemutheu.netlify.app/" class="text-blue-500 font-bold hover:underline hover:text-blue-700 transition duration-300">View Project</a>
-          </div>
-        </div>
-        
-      <!-- Diagnosys Project -->
-        <div class="relative group overflow-hidden rounded-lg">
-          <div class="relative">
-            <img src="Afya Axis.png" alt="AfyaAxis" class="w-full h-64 object-cover">
-            <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <h3 class="text-xl font-bold text-white mb-2">Diagnosys</h3>
-              <p class="text-gray-200 text-center px-4">AI-powered diagnosis and personalized treatment recommendations.</p>
-            </div>
-          </div>
-          <div class="text-center mt-4">
-            <a href="https://www.diagnosyshealth.com" class="text-blue-500 font-bold hover:underline hover:text-blue-700 transition duration-300">View Project</a>
+
+  <div class="page-wrapper">
+    <section class="section-pad">
+      <div class="container">
+
+        <!-- Header -->
+        <div class="text-center mb-8 reveal">
+          <div class="section-label" style="justify-content:center;"><i class="fas fa-cubes"></i> Sericsoft Product
+            Ecosystem</div>
+          <h1 class="section-title">Enterprise Products,<br><span class="text-gradient">Governed with Precision</span>
+          </h1>
+          <p class="section-desc" style="margin:0 auto 32px;">
+            Each product below was conceived, architected, and shipped from Sericsoft Innovations Ltd
+            defined by a clear problem statement, a disciplined tech stack, and a formal governance strategy.
+          </p>
+
+          <!-- Filter Bar -->
+          <div class="filter-bar">
+            <button class="filter-btn active" data-filter="all">All Products</button>
+            <button class="filter-btn" data-filter="saas">SaaS</button>
+            <button class="filter-btn" data-filter="iot">IoT / AgriTech</button>
+            <button class="filter-btn" data-filter="management">Management</button>
+            <button class="filter-btn" data-filter="community">Community</button>
           </div>
         </div>
 
-  <!--  (E-commerce) Project -->
-        <div class="relative group overflow-hidden rounded-lg">
-          <div class="relative">
-            <img src="E-commerce.jpg" alt="Kitchen & Comfort Hub" class="w-full h-64 object-cover">
-            <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <h3 class="text-xl font-bold text-white mb-2">E-commerce website</h3>
-              <p class="text-gray-200 text-center px-4">E-commerce Fashion website </p>
-            </div>
-          </div>
-          <div class="text-center mt-4">
-            <span class="text-blue-500 font-bold">Private</span>
-          </div>
-        </div>
-        
-        <!-- Muriuki & Co-Advocates Project -->
-        <div class="relative group overflow-hidden rounded-lg">
-          <div class="relative">
-            <img src="legal system.png" alt="Legal Management Software" class="w-full h-64 object-cover">
-            <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <h3 class="text-xl font-bold text-white mb-2">Muriuki & Co-Advocates</h3>
-              <p class="text-gray-200 text-center px-4">Legal management system</p>
-            </div>
-          </div>
-          <div class="text-center mt-4">
-            <span class="text-blue-500 font-bold">Private</span>
-          </div>
-        </div>
-      </div>
-     
-        
-        
-        
-        <!-- Personal Projects -->
-      <h3 class="text-2xl font-semibold mt-12 mb-6">Personal Projects</h3>
-      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Product Cards Grid -->
+        <div class="ecosystem-grid reveal" id="projectsGrid">
 
-<!-- Best Manager Project -->
-        <div class="relative group overflow-hidden rounded-lg">
-          <div class="relative">
-            <img src="bestmanager.png" alt="Best Manager" class="w-full h-64 object-cover">
-            <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <h3 class="text-xl font-bold text-white mb-2">Best Manager</h3>
-              <p class="text-gray-200 text-center px-4">Project management system for IT teams</p>
+          <!-- 1. GarageMaster -->
+          <div class="project-card" data-category="saas management">
+            <div class="project-card-img" style="background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);">
+              <div class="proj-emoji-banner">🚗</div>
+            </div>
+            <div class="project-card-body">
+              <div class="project-card-header">
+                <div>
+                  <div class="project-card-name">GarageMaster</div>
+                  <div class="project-card-tagline">Multi-tenant Garage SaaS Platform</div>
+                </div>
+                <span class="badge badge-live"><i class="fas fa-circle" style="font-size:6px;"></i> Live</span>
+              </div>
+
+              <div class="proj-field">
+                <div class="project-field-label"><i class="fas fa-lightbulb" style="margin-right:4px;"></i>Problem
+                  Solved</div>
+                <div class="project-field-value">
+                  Fragmented operations across multi-branch garages no unified system for job cards, inventory,
+                  invoicing, and staff management.
+                </div>
+              </div>
+
+              <div class="proj-field">
+                <div class="project-field-label"><i class="fas fa-layer-group" style="margin-right:4px;"></i>Tech Stack
+                </div>
+                <div class="project-chips">
+                  <span class="tech-chip">PHP</span>
+                  <span class="tech-chip">MySQL</span>
+                  <span class="tech-chip">JavaScript</span>
+                  <span class="tech-chip">Bootstrap</span>
+                  <span class="tech-chip">REST API</span>
+                </div>
+              </div>
+
+              <div class="proj-field">
+                <div class="project-field-label"><i class="fas fa-shield-alt" style="margin-right:4px;"></i>Governance
+                  Strategy</div>
+                <div class="project-field-value">
+                  Agile sprints with bi-weekly releases; multi-tenant architecture ensuring data isolation per branch;
+                  role-based access control (RBAC).
+                </div>
+              </div>
+            </div>
+            <div class="project-card-footer">
+              <span class="badge badge-live">SaaS · Multi-tenant</span>
+              <a href="contact.html?subject=GarageMaster%20Inquiry" class="project-link">Get Access <i
+                  class="fas fa-arrow-right"></i></a>
             </div>
           </div>
-          <div class="text-center mt-4">
-            <a href="https://github.com/GideonMwiti/bestmanager" class="text-blue-500 font-bold hover:underline hover:text-blue-700 transition duration-300">View Project</a>
-          </div>
-        </div>
-        
-        <!-- Digital ID for Everyone Project -->
-        <div class="relative group overflow-hidden rounded-lg">
-          <div class="relative">
-            <img src="digital_id.png" alt="Digital ID for Everyone" class="w-full h-64 object-cover">
-            <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <h3 class="text-xl font-bold text-white mb-2">Digital ID for Everyone</h3>
-              <p class="text-gray-200 text-center px-4">Secure digital identities with biometric authentication</p>
+
+          <!-- 2. Ghala-Smart -->
+          <div class="project-card" data-category="iot">
+            <div class="project-card-img" style="background:linear-gradient(135deg,#0a2e0a,#1a5c1a,#0d3d0d);">
+              <div class="proj-emoji-banner">🌿</div>
+            </div>
+            <div class="project-card-body">
+              <div class="project-card-header">
+                <div>
+                  <div class="project-card-name">Ghala-Smart</div>
+                  <div class="project-card-tagline">IoT AgriTech · Hackathon Winner</div>
+                </div>
+                <span class="badge badge-active"><i class="fas fa-circle" style="font-size:6px;"></i> Active</span>
+              </div>
+
+              <div class="proj-field">
+                <div class="project-field-label"><i class="fas fa-lightbulb" style="margin-right:4px;"></i>Problem
+                  Solved</div>
+                <div class="project-field-value">
+                  Post-harvest crop loss due to poor storage conditions farmers lacked real-time monitoring of
+                  temperature, humidity, and pest intrusion in grain stores.
+                </div>
+              </div>
+
+              <div class="proj-field">
+                <div class="project-field-label"><i class="fas fa-layer-group" style="margin-right:4px;"></i>Tech Stack
+                </div>
+                <div class="project-chips">
+                  <span class="tech-chip">PHP</span>
+                  <span class="tech-chip">MySQL</span>
+                  <span class="tech-chip">JavaScript</span>
+                  <span class="tech-chip">IoT Sensors</span>
+                  <span class="tech-chip">SMS API</span>
+                </div>
+              </div>
+
+              <div class="proj-field">
+                <div class="project-field-label"><i class="fas fa-shield-alt" style="margin-right:4px;"></i>Governance
+                  Strategy</div>
+                <div class="project-field-value">
+                  Hackathon Scrum methodology — rapid 48-hour sprint prototyping; sensor data validation protocols;
+                  farmer-first UX design with USSD fallback.
+                </div>
+              </div>
+            </div>
+            <div class="project-card-footer">
+              <span class="badge badge-active">IoT · AgriTech</span>
+              <a href="contact.html?subject=Ghala-Smart%20Inquiry" class="project-link">Learn More <i
+                  class="fas fa-arrow-right"></i></a>
             </div>
           </div>
-          <div class="text-center mt-4">
-            <span class="text-blue-500 font-bold">Coming Soon</span>
+
+          <!-- 3. Best Manager -->
+          <div class="project-card" data-category="management">
+            <div class="project-card-img" style="background:linear-gradient(135deg,#1a1a2e,#16213e,#0f3460);">
+              <div class="proj-emoji-banner">📋</div>
+            </div>
+            <div class="project-card-body">
+              <div class="project-card-header">
+                <div>
+                  <div class="project-card-name">Best Manager</div>
+                  <div class="project-card-tagline">Task & Project Management System</div>
+                </div>
+                <span class="badge badge-uat"><i class="fas fa-circle" style="font-size:6px;"></i> UAT / Testing</span>
+              </div>
+
+              <div class="proj-field">
+                <div class="project-field-label"><i class="fas fa-lightbulb" style="margin-right:4px;"></i>Problem
+                  Solved</div>
+                <div class="project-field-value">
+                  IT teams lacking structured task tracking and progress visibility leading to missed deadlines, poor
+                  resource allocation, and stakeholder dissatisfaction.
+                </div>
+              </div>
+
+              <div class="proj-field">
+                <div class="project-field-label"><i class="fas fa-layer-group" style="margin-right:4px;"></i>Tech Stack
+                </div>
+                <div class="project-chips">
+                  <span class="tech-chip">PHP</span>
+                  <span class="tech-chip">MySQL</span>
+                  <span class="tech-chip">JavaScript</span>
+                  <span class="tech-chip">Bootstrap</span>
+                </div>
+              </div>
+
+              <div class="proj-field">
+                <div class="project-field-label"><i class="fas fa-shield-alt" style="margin-right:4px;"></i>Governance
+                  Strategy</div>
+                <div class="project-field-value">
+                  Kanban board methodology; formal UAT phase with structured test cases; stakeholder sign-off gates
+                  before deployment; change request management.
+                </div>
+              </div>
+            </div>
+            <div class="project-card-footer">
+              <span class="badge badge-uat">UAT Phase</span>
+              <a href="https://github.com/GideonMwiti/bestmanager" target="_blank" rel="noopener"
+                class="project-link">View on GitHub <i class="fas fa-arrow-right"></i></a>
+            </div>
           </div>
+
+          <!-- 4. Cryopath -->
+          <div class="project-card" data-category="management">
+            <div class="project-card-img" style="background:linear-gradient(135deg,#0a1628,#0d2137,#1a3a52);">
+              <div class="proj-emoji-banner">🧊</div>
+            </div>
+            <div class="project-card-body">
+              <div class="project-card-header">
+                <div>
+                  <div class="project-card-name">Cryopath</div>
+                  <div class="project-card-tagline">Laboratory Management System</div>
+                </div>
+                <span class="badge badge-live"><i class="fas fa-circle" style="font-size:6px;"></i> Live</span>
+              </div>
+
+              <div class="proj-field">
+                <div class="project-field-label"><i class="fas fa-lightbulb" style="margin-right:4px;"></i>Problem
+                  Solved</div>
+                <div class="project-field-value">
+                  Cryotherapy clinics managing patient records, payments, and appointments through paper-based workflows
+                  creating security risks, billing errors, and inefficiencies.
+                </div>
+              </div>
+
+              <div class="proj-field">
+                <div class="project-field-label"><i class="fas fa-layer-group" style="margin-right:4px;"></i>Tech Stack
+                </div>
+                <div class="project-chips">
+                  <span class="tech-chip">PHP</span>
+                  <span class="tech-chip">MySQL</span>
+                  <span class="tech-chip">JavaScript</span>
+                  <span class="tech-chip">Bootstrap</span>
+                  <span class="tech-chip">PDO</span>
+                </div>
+              </div>
+
+              <div class="proj-field">
+                <div class="project-field-label"><i class="fas fa-shield-alt" style="margin-right:4px;"></i>Governance
+                  Strategy</div>
+                <div class="project-field-value">
+                  SDLC Waterfall with formal requirements sign-off; AES-256 data encryption; RBAC with audit trails;
+                  HIPAA-aligned data security protocols for patient confidentiality.
+                </div>
+              </div>
+            </div>
+            <div class="project-card-footer">
+              <span class="badge badge-live">Secure · Healthcare</span>
+              <a href="contact.html?subject=Cryopath%20Inquiry" class="project-link">Get Demo <i
+                  class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <!-- 5. LCMS -->
+          <div class="project-card" data-category="management saas">
+            <div class="project-card-img" style="background:linear-gradient(135deg,#1a0a2e,#2d1b69,#1a0a4a);">
+              <div class="proj-emoji-banner">⚖️</div>
+            </div>
+            <div class="project-card-body">
+              <div class="project-card-header">
+                <div>
+                  <div class="project-card-name">LCMS</div>
+                  <div class="project-card-tagline">Legal Case Management System</div>
+                </div>
+                <span class="badge badge-live"><i class="fas fa-circle" style="font-size:6px;"></i> Live</span>
+              </div>
+
+              <div class="proj-field">
+                <div class="project-field-label"><i class="fas fa-lightbulb" style="margin-right:4px;"></i>Problem
+                  Solved</div>
+                <div class="project-field-value">
+                  Law firms managing cases, client records, appointments, and invoices through spreadsheets causing
+                  data loss, missed deadlines, and compliance vulnerabilities.
+                </div>
+              </div>
+
+              <div class="proj-field">
+                <div class="project-field-label"><i class="fas fa-layer-group" style="margin-right:4px;"></i>Tech Stack
+                </div>
+                <div class="project-chips">
+                  <span class="tech-chip">PHP</span>
+                  <span class="tech-chip">MySQL</span>
+                  <span class="tech-chip">JavaScript</span>
+                  <span class="tech-chip">Bootstrap</span>
+                  <span class="tech-chip">FPDF</span>
+                </div>
+              </div>
+
+              <div class="proj-field">
+                <div class="project-field-label"><i class="fas fa-shield-alt" style="margin-right:4px;"></i>Governance
+                  Strategy</div>
+                <div class="project-field-value">
+                  PMBOK governance framework; role-based access (Super Admin / Firm Admin / Lawyer / Client); formal
+                  change control board; SOC-2 aligned security reviews.
+                </div>
+              </div>
+            </div>
+            <div class="project-card-footer">
+              <span class="badge badge-live">Legal · Enterprise</span>
+              <a href="contact.html?subject=LCMS%20Inquiry" class="project-link">Get Demo <i
+                  class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <!-- 6. Uyatsa -->
+          <div class="project-card" data-category="community">
+            <div class="project-card-img" style="background:linear-gradient(135deg,#0f2027,#203a43,#143642);">
+              <div class="proj-emoji-banner">🤝</div>
+            </div>
+            <div class="project-card-body">
+              <div class="project-card-header">
+                <div>
+                  <div class="project-card-name">Uyatsa</div>
+                  <div class="project-card-tagline">Community Networking Platform</div>
+                </div>
+                <span class="badge badge-active"><i class="fas fa-circle" style="font-size:6px;"></i> Active</span>
+              </div>
+
+              <div class="proj-field">
+                <div class="project-field-label"><i class="fas fa-lightbulb" style="margin-right:4px;"></i>Problem
+                  Solved</div>
+                <div class="project-field-value">
+                  Local communities and associations lacking a digital platform to coordinate, share announcements,
+                  manage membership, and organize events cohesively.
+                </div>
+              </div>
+
+              <div class="proj-field">
+                <div class="project-field-label"><i class="fas fa-layer-group" style="margin-right:4px;"></i>Tech Stack
+                </div>
+                <div class="project-chips">
+                  <span class="tech-chip">PHP</span>
+                  <span class="tech-chip">MySQL</span>
+                  <span class="tech-chip">JavaScript</span>
+                  <span class="tech-chip">Bootstrap</span>
+                  <span class="tech-chip">WhatsApp API</span>
+                </div>
+              </div>
+
+              <div class="proj-field">
+                <div class="project-field-label"><i class="fas fa-shield-alt" style="margin-right:4px;"></i>Governance
+                  Strategy</div>
+                <div class="project-field-value">
+                  Community-driven Agile sprints with member feedback loops; moderated content governance; tiered
+                  membership access levels; quarterly roadmap reviews.
+                </div>
+              </div>
+            </div>
+            <div class="project-card-footer">
+              <span class="badge badge-active">Community · Social</span>
+              <a href="contact.html?subject=Uyatsa%20Inquiry" class="project-link">Learn More <i
+                  class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+        </div><!-- /ecosystem-grid -->
+
+        <!-- CTA -->
+        <div class="text-center mt-8 reveal" style="margin-top:48px;">
+          <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:16px;">
+            Interested in a custom enterprise solution or partnering with Sericsoft?
+          </p>
+          <a href="contact.html?subject=Custom%20Project%20Inquiry" class="btn-primary">
+            <i class="fas fa-paper-plane"></i> Start a Conversation
+          </a>
         </div>
+
       </div>
-    </div>
-  </section>
-  
-  <!--
-    ==========================================
-    Footer Section
-    ==========================================
-    - Contains social media links and copyright 
-      information with automatic year update.
-  -->
-  <footer class="bg-gray-800 text-white py-8 mt-16">
-    <div class="max-w-6xl mx-auto px-4">
-      
-      <!-- Social Media Links -->
-      <div class="flex justify-center space-x-6 mb-8">
-        <a href="https://facebook.com/techbros631" target="_blank" class="hover:text-blue-200 transition-colors">
-          <i class="fab fa-facebook text-2xl"></i>
-        </a>
-        <a href="https://www.instagram.com/gideonmwiti001" target="_blank" class="hover:text-blue-200 transition-colors">
-          <i class="fab fa-instagram text-2xl"></i>
-        </a>
-        <a href="https://x.com/techbros631" target="_blank" class="hover:text-blue-200 transition-colors">
-          <i class="fab fa-twitter text-2xl"></i>
-        </a>
-        <a href="https://wa.me/254798985389?text=Hello%20I%27m%20interested%20in%20your%20services" target="_blank" class="hover:text-blue-200 transition-colors">
-          <i class="fab fa-whatsapp text-2xl"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/mwitigideon/" target="_blank" class="hover:text-blue-200 transition-colors">
-          <i class="fab fa-linkedin text-2xl"></i>
-        </a>
-        <a href="https://github.com/GideonMwiti" target="_blank" class="hover:text-blue-200 transition-colors">
-          <i class="fab fa-github text-2xl"></i>
-        </a>
-        <a href="mailto:mwitigideon002@gmail.com" class="hover:text-blue-200 transition-colors">
-          <i class="fas fa-envelope text-2xl"></i>
-        </a>
-        <a href="tel:+254798985389" class="hover:text-blue-200 transition-colors">
-          <i class="fas fa-phone text-2xl"></i>
-        </a>
+    </section>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-social">
+        <a href="https://facebook.com/techbros631" target="_blank" aria-label="Facebook"><i
+            class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/gideonmwiti001" target="_blank" aria-label="Instagram"><i
+            class="fab fa-instagram"></i></a>
+        <a href="https://x.com/techbros631" target="_blank" aria-label="X / Twitter"><i
+            class="fab fa-x-twitter"></i></a>
+        <a href="https://wa.me/254798985389?text=Hello%20I%27m%20interested%20in%20your%20services" target="_blank"
+          aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://github.com/GideonMwiti" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="mailto:ceo@sericsoft.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        <a href="tel:+254798985389" aria-label="Phone"><i class="fas fa-phone"></i></a>
       </div>
-      
-      <!-- Copyright -->
-      <div class="border-t border-blue-400 pt-6 text-center">
-        <p class="text-blue-100">
-          &copy; <span id="currentYear"></span> GIDEON-MWITI. All rights reserved.
-        </p>
-      </div>
+      <hr class="footer-divider">
+      <p class="footer-copy">&copy; <span id="currentYear"></span> <span>Gideon Mwiti</span> · CEO, <a
+          href="https://www.sericsoft.com" target="_blank" rel="noopener"
+          style="color:var(--accent-cyan);text-decoration:none;">Sericsoft Innovations Ltd</a>. All rights reserved.</p>
     </div>
   </footer>
-  
-  <!--
-    ==========================================
-    Script Section
-    ==========================================
-    Contains JavaScript for dynamic behavior:
-      1. Updating the copyright year.
-      2. Toggling the mobile menu.
-  -->
-  
-  <!-- Auto-update Copyright Year -->
+
   <script>
     document.getElementById('currentYear').textContent = new Date().getFullYear();
-  </script>
-  
-  <!-- Mobile Menu Toggle Script -->
-  <script>
-    // Select mobile menu elements
-    const mobileMenuButton = document.getElementById('menuBtn');
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
     const mobileMenu = document.getElementById('mobileMenu');
-    
-    // Toggle mobile menu visibility on button click
-    mobileMenuButton.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+      menuBtn.querySelector('i').classList.toggle('fa-bars');
+      menuBtn.querySelector('i').classList.toggle('fa-xmark');
     });
-    
-    // Hide mobile menu when a menu item is clicked
-    document.querySelectorAll('#mobileMenu a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
-      });
-    });
-  </script>
-  
-<script>
-  // Highlight active navigation link
-  document.addEventListener('DOMContentLoaded', function() {
-      const navLinks = document.querySelectorAll('.nav-link');
-      const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-  
-      navLinks.forEach(link => {
-          const linkPage = link.getAttribute('href');
-          
-          // Add active styles if URLs match
-          if (linkPage === currentPage) {
-              link.classList.add('text-blue-600', 'border-blue-600');
-              link.classList.remove('text-gray-600', 'border-transparent');
+
+    // Filter buttons
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.project-card');
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const f = btn.dataset.filter;
+        cards.forEach(card => {
+          const cats = card.dataset.category || '';
+          if (f === 'all' || cats.includes(f)) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
           }
+        });
       });
-  });
+    });
+
+    // Scroll reveal
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   </script>
 </body>
+
 </html>
