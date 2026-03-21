@@ -7,9 +7,9 @@
 // ============================================================
 
 define('DB_HOST', 'localhost');
-define('DB_NAME', 'sericsof_portfolio');  // cPanel database name
-define('DB_USER', 'sericsof_gideon');    // cPanel database user
-define('DB_PASS', 'YOUR_DB_PASSWORD');   // ← Replace with your DB password
+define('DB_NAME', 'portfolio_db');  // cPanel database name
+define('DB_USER', 'root');    // cPanel database user
+define('DB_PASS', '@Learnpython.002');   // ← Replace with your DB password
 define('DB_CHARSET', 'utf8mb4');
 
 function getDB(): PDO {

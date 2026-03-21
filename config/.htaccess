@@ -1,0 +1,3 @@
+# Prevent any direct web access to this directory
+Order Deny,Allow
+Deny from all

@@ -1,0 +1,13 @@
+# 1. Prevent access to hidden folders and files like .git
+RedirectMatch 404 /\.([a-zA-Z0-9]+)
+
+# 2. Prevent directory listing
+Options -Indexes
+
+# 3. Security Headers
+<IfModule mod_headers.c>
+    Header set X-XSS-Protection "1; mode=block"
+    Header always append X-Frame-Options SAMEORIGIN
+    Header set X-Content-Type-Options nosniff
+    Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+</IfModule>

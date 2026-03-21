@@ -50,13 +50,24 @@ if (!empty($errors)) {
 $name    = htmlspecialchars($name,    ENT_QUOTES, 'UTF-8');
 $subject = htmlspecialchars($subject, ENT_QUOTES, 'UTF-8');
 $message = htmlspecialchars($message, ENT_QUOTES, 'UTF-8');
-$ip      = $_SERVER['REMOTE_ADDR'] ?? '';
-$ua      = substr($_SERVER['HTTP_USER_AGENT'] ?? '', 0, 255);
+$ip      = htmlspecialchars($_SERVER['REMOTE_ADDR'] ?? '', ENT_QUOTES, 'UTF-8');
+$ua      = htmlspecialchars(substr($_SERVER['HTTP_USER_AGENT'] ?? '', 0, 255), ENT_QUOTES, 'UTF-8');
 
-// ── 2. Save to Database ───────────────────────────────────────
+// ── 2. Rate Limiting ──────────────────────────────────────────
 require_once __DIR__ . '/config/db.php';
-
 $pdo = getDB();
+
+$stmtCheck = $pdo->prepare("SELECT COUNT(*) FROM contact_messages WHERE ip_address = :ip AND submitted_at > DATE_SUB(NOW(), INTERVAL 1 HOUR)");
+$stmtCheck->execute([':ip' => $ip]);
+$recentSubmissions = (int) $stmtCheck->fetchColumn();
+
+if ($recentSubmissions >= 5) {
+    http_response_code(429); // Too Many Requests
+    echo json_encode(['success' => false, 'error' => 'Rate limit exceeded. Please try again later.']);
+    exit;
+}
+
+// ── 3. Save to Database ───────────────────────────────────────
 $stmt = $pdo->prepare(
     'INSERT INTO contact_messages (name, email, subject, message, ip_address, user_agent)
      VALUES (:name, :email, :subject, :message, :ip, :ua)'
@@ -70,7 +81,7 @@ $stmt->execute([
     ':ua'      => $ua,
 ]);
 
-// ── 3. Send Emails ────────────────────────────────────────────
+// ── 4. Send Emails ────────────────────────────────────────────
 require_once __DIR__ . '/config/mail.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
@@ -104,7 +115,7 @@ try {
     $mailErrors[] = 'Confirmation email failed: ' . $e->getMessage();
 }
 
-// ── 4. Respond ────────────────────────────────────────────────
+// ── 5. Respond ────────────────────────────────────────────────
 echo json_encode([
     'success'     => true,
     'message'     => "Thanks {$name}! Your message has been received. We'll get back to you within 24 hours.",
