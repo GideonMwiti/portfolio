@@ -15,7 +15,7 @@
 
 define('SMTP_HOST',   'mail.sericsoft.com');   // ← Your cPanel mail host
 define('SMTP_USER',   'ceo@sericsoft.com');    // ← cPanel email address
-define('SMTP_PASS',   'YOUR_EMAIL_PASSWORD');  // ← Your email password
+define('SMTP_PASS',   '@Sericsoft.2026');  // ← Your email password
 define('SMTP_PORT',   465);                    // 465 = SSL, 587 = TLS
 define('SMTP_SECURE', 'ssl');                  // 'ssl' or 'tls'
 define('SMTP_FROM',   'ceo@sericsoft.com');
@@ -40,6 +40,16 @@ function createMailer(): PHPMailer {
     $mail->SMTPSecure = SMTP_SECURE;
     $mail->Port       = SMTP_PORT;
     $mail->CharSet    = 'UTF-8';
+
+    // Disable strict SSL verification (fixes common cPanel SMTP issues)
+    $mail->SMTPOptions = [
+        'ssl' => [
+            'verify_peer'       => false,
+            'verify_peer_name'  => false,
+            'allow_self_signed' => true
+        ]
+    ];
+
     $mail->setFrom(SMTP_FROM, SMTP_NAME);
     return $mail;
 }
