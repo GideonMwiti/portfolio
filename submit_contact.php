@@ -135,46 +135,53 @@ function getAdminEmailBody(string $name, string $email, string $subject, string 
 <head>
   <meta charset="UTF-8">
   <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: #f4f7f6; color: #333333; margin: 0; padding: 0; }
-    .wrap { max-width: 600px; margin: 40px auto; background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.06); }
-    .header { background: #0f2027; padding: 32px 40px; text-align: center; border-bottom: 5px solid #00d4ff; }
-    .header h1 { margin: 0; font-size: 24px; color: #ffffff; letter-spacing: -0.5px; }
-    .header p  { margin: 8px 0 0; color: #a1b0b5; font-size: 14px; }
-    .body { padding: 40px; }
-    .field { margin-bottom: 24px; }
-    .field-label { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #8898aa; font-weight: 700; margin-bottom: 8px; }
-    .field-value { font-size: 16px; color: #1a202c; line-height: 1.6; background: #f8fafc; padding: 16px 20px; border-radius: 8px; border-left: 4px solid #00d4ff; word-break: break-word; }
-    .message-box { font-size: 15px; color: #334155; line-height: 1.7; background: #ffffff; padding: 20px; border: 1px solid #e2e8f0; border-radius: 8px; font-style: italic; white-space: pre-wrap; }
-    .meta { font-size: 12px; color: #94a3b8; margin-top: 32px; padding-top: 20px; border-top: 1px solid #e2e8f0; text-align: center; }
-    .cta { display: block; text-align: center; margin-top: 32px; padding: 14px 24px; background: #0f2027; color: #ffffff !important; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 16px; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #060b18; color: #e2e8f0; margin: 0; padding: 0; }
+    .wrap { max-width: 600px; margin: 32px auto; background: #0d1526; border: 1px solid rgba(0,212,255,0.2); border-radius: 16px; overflow: hidden; }
+    .header { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); padding: 36px 36px 28px; text-align: center; }
+    .header h1 { margin: 0; font-size: 24px; color: #ffffff; }
+    .header p  { margin: 8px 0 0; color: rgba(255,255,255,0.65); font-size: 14px; }
+    .badge { display: inline-block; background: rgba(0,212,255,0.15); border: 1px solid rgba(0,212,255,0.4); color: #00d4ff; border-radius: 20px; padding: 3px 12px; font-size: 11px; font-weight: 700; letter-spacing: 0.05em; margin-top: 10px; }
+    .body { padding: 32px 36px; }
+    .highlight { background: rgba(0,212,255,0.08); border: 1px solid rgba(0,212,255,0.2); border-radius: 10px; padding: 16px 20px; margin-bottom: 24px; }
+    .highlight-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: #64748b; margin-bottom: 4px; }
+    .highlight-val { font-size: 15px; color: #e2e8f0; font-weight: 600; }
+    .message-box { font-size: 14px; color: #e2e8f0; line-height: 1.8; background: rgba(255,255,255,0.04); padding: 20px; border-radius: 8px; border-left: 3px solid #00d4ff; font-style: italic; white-space: pre-wrap; margin-bottom: 24px; }
+    .divider { border: none; border-top: 1px solid rgba(255,255,255,0.06); margin: 24px 0; }
+    .meta { font-size: 12px; color: #64748b; text-align: center; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+    .cta { display: block; text-align: center; margin: 32px 0 10px; padding: 14px 24px; background: linear-gradient(135deg, #00d4ff, #6366f1); color: #060b18 !important; text-decoration: none; border-radius: 8px; font-weight: 700; font-size: 15px; }
   </style>
 </head>
 <body>
 <div class="wrap">
   <div class="header">
-    <h1>📬 New Inquiry Received</h1>
-    <p>Via Sericsoft Innovations Portfolio</p>
+    <h1>📬 New Portfolio Inquiry</h1>
+    <p>Someone sent a message via your contact form</p>
+    <span class="badge">ACTION REQUIRED</span>
   </div>
   <div class="body">
-    <div class="field">
-      <div class="field-label">Sender Name</div>
-      <div style="font-size: 18px; font-weight: 600; color: #1a202c;">{$name}</div>
+    
+    <div class="highlight">
+      <div class="highlight-label">👤 Sender Profile</div>
+      <div class="highlight-val" style="margin-bottom: 12px;">{$name}</div>
+      <div class="highlight-label">📧 Email Address</div>
+      <div class="highlight-val"><a href="mailto:{$email}" style="color:#00d4ff; text-decoration:none;">{$email}</a></div>
     </div>
-    <div class="field">
-      <div class="field-label">Email Address</div>
-      <div><a href="mailto:{$email}" style="color:#00d4ff; font-weight: 600; text-decoration: none; font-size: 16px;">{$email}</a></div>
+
+    <div class="highlight">
+      <div class="highlight-label">📌 Subject</div>
+      <div class="highlight-val">{$subject}</div>
     </div>
-    <div class="field">
-      <div class="field-label">Subject</div>
-      <div class="field-value">{$subject}</div>
-    </div>
-    <div class="field">
-      <div class="field-label">Message</div>
-      <div class="message-box">"{$message}"</div>
-    </div>
+
+    <div class="highlight-label" style="margin-left: 4px;">💬 Message</div>
+    <div class="message-box">"{$message}"</div>
+    
     <a href="mailto:{$email}?subject=Re: {$subject}" class="cta">Reply to {$name}</a>
+    
+    <hr class="divider">
+    
     <div class="meta">
-      <strong>IP Address:</strong> {$ip} &nbsp; | &nbsp; <strong>Submitted:</strong> {$time}
+      <div><strong>🌐 IP:</strong> {$ip}</div>
+      <div><strong>🕐 Time:</strong> {$time}</div>
     </div>
   </div>
 </div>
